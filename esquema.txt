@@ -1,0 +1,13 @@
+vivienda (tipo, datos)
+
+
+usuario (registrar que necesito saber) dni nombre apellidos "nombre usuario" "mail"
+
+
+reserva (usuario-vivienda) --numero de reserva
+
+
+actividades/extras------
+
+
+opiniones/puntuacion
