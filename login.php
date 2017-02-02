@@ -29,7 +29,7 @@
           //MAKING A SELECT QUERY
           //Password coded with md5 at the database. Look for better options
           $consulta="select * from usuarios where
-          email='".$_POST["user"]."' and clave=md5('".$_POST["password"]."');";
+          email='".$_POST["email"]."' and clave=md5('".$_POST["clave"]."');";
           //Test if the query was correct
           //SQL Injection Possible
           //Check http://php.net/manual/es/mysqli.prepare.php for more security
@@ -39,7 +39,7 @@
                 echo "LOGIN INVALIDO";
               } else {
                 //VALID LOGIN. SETTING SESSION VARS
-                $_SESSION["user"]=$_POST["user"];
+                $_SESSION["email"]=$_POST["email"];
                 $_SESSION["language"]="es";
                 header("Location: index.php");
               }
@@ -52,9 +52,9 @@
 
     <form action="login.php" method="post">
 
-      <p><input name="user" required></p>
-      <p><input name="password" type="password" required></p>
-      <p><input type="submit" value="Log In" name="login"></p>
+      <p><input name="email" required></p>
+      <p><input name="clave" type="password" required></p>
+      <p><input type="submit" value="Identificarme" name="login"></p>
 
     </form>
 </div>

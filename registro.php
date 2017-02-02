@@ -1,4 +1,7 @@
-
+<?php
+  session_start();
+  //Siempre se ha de empezar con session start.
+?>
 <div align="center">
 <h1 align="center">Registro</h1>
 <?php
