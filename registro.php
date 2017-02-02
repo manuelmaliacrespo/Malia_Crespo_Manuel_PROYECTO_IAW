@@ -1,3 +1,5 @@
+
+<div align="center">
 <h1 align="center">Registro</h1>
 <?php
     //FORM SUBMITTED
@@ -32,9 +34,6 @@
 ?>
 
 
-
-
-
 <form action="registro.php" method="post" autocomplete="off">
 
   <p>EMAIL: <input name="email" required></p>
@@ -47,3 +46,6 @@
   <p><input type="submit" value="Registrar" name="registro"></p>
 
 </form>
+
+
+</div>
