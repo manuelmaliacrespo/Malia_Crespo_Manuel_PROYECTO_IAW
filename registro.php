@@ -7,6 +7,7 @@
 <?php
     //FORM SUBMITTED
     if (isset($_POST["registro"])) {
+    //Si existe registro.
       //CREATING THE CONNECTION
       $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
       //Conexion a la base de datos (localhost, usuario, contraseña, bd).
@@ -37,6 +38,7 @@
 ?>
 
 <!--Formulario con los datos que pido.-->
+<!--PREGUNTAR autocomplete.-->
 
 <form action="registro.php" method="post" autocomplete="off">
 
