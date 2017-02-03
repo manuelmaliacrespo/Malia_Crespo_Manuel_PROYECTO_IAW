@@ -30,25 +30,31 @@
           //Password coded with md5 at the database. Look for better options
           $consulta="select * from usuarios where
           email='".$_POST["email"]."' and clave=md5('".$_POST["clave"]."');";
+          //Consulta y que muestre la clave encriptada en md5.
           //Test if the query was correct
           //SQL Injection Possible
           //Check http://php.net/manual/es/mysqli.prepare.php for more security
           if ($result = $connection->query($consulta)) {
               //No rows returned
               if ($result->num_rows===0) {
+              //Si el resultado es = 0 muestrame Login invalido.
                 echo "LOGIN INVALIDO";
               } else {
                 //VALID LOGIN. SETTING SESSION VARS
+                //Si mete en session el email-
                 $_SESSION["email"]=$_POST["email"];
                 $_SESSION["language"]="es";
                 header("Location: index.php");
               }
           } else {
             echo "Wrong Query";
+            //Si no error en la consulta.
           }
 
       }
     ?>
+
+<!--Formulario con los datos que pido.-->
 
     <form action="login.php" method="post">
 
