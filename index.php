@@ -1,13 +1,6 @@
 <?php
 session_start();
 
-
-if (!isset($_SESSION["email"])) {
-  session_destroy();
-  header("Location: login.php");
-}
-
-
 ?>
 
 
@@ -63,7 +56,6 @@ if (!isset($_SESSION["email"])) {
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="#">About</a></li>
               <li><a href="#">Contact</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -79,8 +71,23 @@ if (!isset($_SESSION["email"])) {
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="login.php">Login</a></li>
-              <li><a href="registro.php">Registro</a></li>
+
+
+            <?php
+            //Si existe email, lo mostramos y añadimos boton para deslogarse.
+            //En caso contrario añadimos el boton login y registro.
+            if (isset($_SESSION["email"])) {
+              echo '<li><a href="">'.$_SESSION["email"].'</a></li>';
+              echo '<li><a href="logout.php">Deslogue</a></li>';
+            } else {
+              echo '<li><a href="login.php">Login</a></li>';
+              echo '<li><a href="registro.php">Registro</a></li>';
+            }
+
+            ?>
+
+
+
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
@@ -88,8 +95,8 @@ if (!isset($_SESSION["email"])) {
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+        <h1></h1>
+        <p>static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
         <p>
           <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
         </p>
