@@ -7,7 +7,6 @@
 <?php
     //FORM SUBMITTED
     if (isset($_POST["registro"])) {
-    //Si existe registro.
       //CREATING THE CONNECTION
       $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
       //Conexion a la base de datos (localhost, usuario, contraseña, bd).
@@ -21,7 +20,7 @@
       //Password coded with md5 at the database. Look for better options
       $consulta="insert into usuarios (email, clave, nombre, apellidos, dni)
       values ('".$_POST["email"]."', md5('".$_POST["clave"]."'), '".$_POST["nombre"]."', '".$_POST["apellidos"]."', '".$_POST["dni"]."')";
-      //Consulta y que muestre la clave encriptada en md5.
+
       //Test if the query was correct
       //SQL Injection Possible
       //Check http://php.net/manual/es/mysqli.prepare.php for more security
@@ -37,8 +36,6 @@
   }
 ?>
 
-<!--Formulario con los datos que pido.-->
-<!--PREGUNTAR autocomplete.-->
 
 <form action="registro.php" method="post" autocomplete="off">
 
