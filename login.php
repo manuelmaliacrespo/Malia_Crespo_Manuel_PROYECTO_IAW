@@ -39,8 +39,18 @@
                 echo "LOGIN INVALIDO";
               } else {
                 //VALID LOGIN. SETTING SESSION VARS
-                $_SESSION["email"]=$_POST["email"];
+
+                //Recuperamos el resultado de la consulta.
+                $obj = $result->fetch_object();
+
+                //Incluimos cada campo en session.
+                $_SESSION["email"] = $obj->email;
+                $_SESSION["nombre"] = $obj->nombre;
+                $_SESSION["apellidos"] = $obj->apellidos;
+                $_SESSION["dni"] = $obj->dni;
+                $_SESSION["rol"] = $obj->rol;
                 $_SESSION["language"]="es";
+
                 header("Location: index.php");
               }
           } else {
