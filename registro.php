@@ -18,9 +18,10 @@
       //Validacion de la base de datos, en caso de error que lo muestre.
       //MAKING A SELECT QUERY
       //Password coded with md5 at the database. Look for better options
-      $consulta="insert into usuarios (email, clave, nombre, apellidos, dni)
-      values ('".$_POST["email"]."', md5('".$_POST["clave"]."'), '".$_POST["nombre"]."', '".$_POST["apellidos"]."', '".$_POST["dni"]."')";
+      $consulta="insert into usuarios (email, clave, nombre, apellidos, dni, rol)
+      values ('".$_POST["email"]."', md5('".$_POST["clave"]."'), '".$_POST["nombre"]."', '".$_POST["apellidos"]."', '".$_POST["dni"]."', 'usuario')";
 
+      echo $consulta;
       //Test if the query was correct
       //SQL Injection Possible
       //Check http://php.net/manual/es/mysqli.prepare.php for more security

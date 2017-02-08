@@ -60,7 +60,7 @@
       }
     ?>
 
-    <form action="login.php" method="post">
+    <form action="login.php" method="post" autocomplete="off">
 
       <p><input name="email" required></p>
       <p><input name="clave" type="password" required></p>
