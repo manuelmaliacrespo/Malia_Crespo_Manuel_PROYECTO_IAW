@@ -1,5 +1,6 @@
 <?php
 session_start();
+//Siempre se ha de comenzar con session start.
 
 ?>
 
@@ -11,38 +12,32 @@ session_start();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
     <title>Navbar Template for Bootstrap</title>
 
-    <!-- Bootstrap core CSS -->
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+
     <link href="css/navbar.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
     <script src="js/ie-emulation-modes-warning.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
   </head>
 
   <body>
 
     <div class="container">
 
-      <!-- Static navbar -->
+
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -52,18 +47,22 @@ session_start();
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">MANUEL MALIA</a>
+
+            <a class="navbar-brand" href="index.php">Cádizerestú</a>
+            <!--Nombre de la web.-->
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><a href="#">Contact</a></li>
+
               <?php
-                if (isset($_SESSION["rol"]) == "admin") {
+                //Si el rol es admin, muestrame el boton Panel de Control (--).
+                if ($_SESSION["rol"] == "admin") {
                   echo '<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Panel Administración <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">Usuarios</a></li>
-                      <li><a href="#">Viviendas</a></li>
+                      <li><a href="panel_administrador/usuarios.php">Usuarios</a></li>
+                      <li><a href="panel_administrador/viviendas.php">Viviendas</a></li>
                       <li><a href="#">Extras</a></li>
                     </ul>
                   </li>';
@@ -90,11 +89,11 @@ session_start();
 
 
             </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
+          </div>
+        </div>
       </nav>
 
-      <!-- Main component for a primary marketing message or call to action -->
+
       <div class="jumbotron">
         <h1></h1>
         <p>static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
@@ -103,16 +102,14 @@ session_start();
         </p>
       </div>
 
-    </div> <!-- /container -->
+    </div>
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
     <script src="js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
