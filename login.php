@@ -2,15 +2,11 @@
   session_start();
   //Siempre se ha de empezar con session start.
 ?>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href=" ">
-  </head>
-  <body>
+
+
+  <!-- Incluyendo la parte del código de la cabecera (principalmente menú)-->
+  <?php include 'cabecera.php'; ?>
+
 
   <div align="center">
     <h1 align="center">Inserte sus datos</h1>
@@ -26,8 +22,6 @@
               exit();
           }
           //Validacion de la base de datos, en caso de error que lo muestre.
-          //MAKING A SELECT QUERY
-          //Password coded with md5 at the database. Look for better options
           $consulta="select * from usuarios where
           email='".$_POST["email"]."' and clave=md5('".$_POST["clave"]."');";
           //Test if the query was correct
@@ -70,5 +64,6 @@
 </div>
 
 
-  </body>
-</html>
+
+    <!-- Incluyendo la parte del código de la parte de abajo de la página. -->
+    <?php include 'piepagina.php'; ?>

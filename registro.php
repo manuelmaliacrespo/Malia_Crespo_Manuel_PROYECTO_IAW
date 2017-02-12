@@ -2,6 +2,16 @@
   session_start();
   //Siempre se ha de empezar con session start.
 ?>
+
+
+
+
+    <!-- Incluyendo la parte del código de la cabecera (principalmente menú)-->
+    <?php include 'cabecera.php'; ?>
+
+
+
+
 <div align="center">
 <h1 align="center">Registro</h1>
 <?php
@@ -50,3 +60,9 @@
 
 
 </div>
+
+
+
+
+<!-- Incluyendo la parte del código de la parte de abajo de la página. -->
+<?php include 'piepagina.php'; ?>
