@@ -1,3 +1,8 @@
+<?php
+  session_start();
+  //Siempre se ha de empezar con session start.
+?>
+
 
 
 <!DOCTYPE html>
@@ -8,21 +13,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="">
 
     <title>Navbar Template for Bootstrap</title>
 
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
 
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
 
-    <link href="css/navbar.css" rel="stylesheet">
+    <link href="../css/navbar.css" rel="stylesheet">
 
 
-    <script src="js/ie-emulation-modes-warning.js"></script>
+    <script src="../js/ie-emulation-modes-warning.js"></script>
 
 
   </head>
@@ -51,13 +56,12 @@
 
               <?php
                 //Si el rol es admin, muestrame el boton Panel de Control (--).
-                //Mostrar dentro del Panel usuarios, viviendas y extras.
                 if (isset($_SESSION["rol"]) && $_SESSION["rol"] == "admin") {
                   echo '<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Panel Administración <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="panel_administrador/usuarios.php">Usuarios</a></li>
-                      <li><a href="panel_administrador/viviendas.php">Viviendas</a></li>
+                      <li><a href="../panel_administrador/usuarios.php">Usuarios</a></li>
+                      <li><a href="../panel_administrador/viviendas.php">Viviendas</a></li>
                       <li><a href="#">Extras</a></li>
                     </ul>
                   </li>';

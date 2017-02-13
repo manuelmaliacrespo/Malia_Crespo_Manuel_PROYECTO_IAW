@@ -1,11 +1,7 @@
-<?php
-  session_start();
-  //Siempre se ha de empezar con session start.
-?>
 
 
   <!-- Incluyendo la parte del código de la cabecera (principalmente menú)-->
-  <?php include 'cabecera.php'; ?>
+  <?php include '../cabecera.php'; ?>
 
 
   <div align="center">
@@ -22,6 +18,8 @@
               exit();
           }
           //Validacion de la base de datos, en caso de error que lo muestre.
+          //MAKING A SELECT QUERY
+          //Password coded with md5 at the database. Look for better options
           $consulta="select * from usuarios where
           email='".$_POST["email"]."' and clave=md5('".$_POST["clave"]."');";
           //Test if the query was correct
@@ -66,4 +64,4 @@
 
 
     <!-- Incluyendo la parte del código de la parte de abajo de la página. -->
-    <?php include 'piepagina.php'; ?>
+    <?php include '../piepagina.php'; ?>
