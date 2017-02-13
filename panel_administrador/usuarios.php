@@ -1,10 +1,14 @@
-<?php
-  session_start();
-  //Siempre se ha de empezar con session start.
 
-  if($_SESSION["rol"] != "admin") {
-    header ("Location: ../index.php");
-  }
+<!-- Incluyendo la parte del código de la cabecera (principalmente menú)-->
+<?php include '../cabecera.php'; ?>
+
+
+<?php
+
+if($_SESSION["rol"] != "admin") {
+  header ("Location: ../index.php");
+}
+
 ?>
 
 
@@ -68,6 +72,5 @@
 
 </div>
 
-
-  </body>
-</html>
+<!-- Incluyendo la parte del código de la parte de abajo de la página. -->
+<?php include '../piepagina.php'; ?>

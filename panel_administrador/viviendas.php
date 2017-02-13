@@ -1,21 +1,13 @@
+<!-- Incluyendo la parte del código de la cabecera (principalmente menú)-->
+<?php include '../cabecera.php'; ?>
+
 <?php
-  session_start();
-  //Siempre se ha de empezar con session start.
 
   if($_SESSION["rol"] != "admin") {
     header ("Location: ../index.php");
   }
   //Si el rol "NO" es admin mandame a index.php
 ?>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href=" ">
-  </head>
-  <body>
 
   <div align="center">
     <h1 align="center"></h1>
@@ -69,5 +61,5 @@
 </div>
 
 
-  </body>
-</html>
+<!-- Incluyendo la parte del código de la parte de abajo de la página. -->
+<?php include '../piepagina.php'; ?>

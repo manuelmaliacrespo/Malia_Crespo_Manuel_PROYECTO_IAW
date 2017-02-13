@@ -15,7 +15,7 @@
     <meta name="author" content="">
     <link rel="icon" href="">
 
-    <title>Navbar Template for Bootstrap</title>
+    <title>Alquiler de viviendas</title>
 
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +47,7 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="index.php">Cádizerestú</a>
+            <a class="navbar-brand" href="../paginas/index.php">Cádizerestú</a>
             <!--Nombre de la web.-->
           </div>
           <div id="navbar" class="navbar-collapse collapse">
@@ -77,7 +77,7 @@
             //En caso contrario añadimos el boton login y registro.
             if (isset($_SESSION["email"])) {
               echo '<li><a href="">'.$_SESSION["email"].'</a></li>';
-              echo '<li><a href="logout.php">Deslogue</a></li>';
+              echo '<li><a href="../paginas/logout.php">Deslogue</a></li>';
             } else {
               echo '<li><a href="login.php">Login</a></li>';
               echo '<li><a href="registro.php">Registro</a></li>';
