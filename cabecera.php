@@ -77,10 +77,10 @@
             //En caso contrario añadimos el boton login y registro.
             if (isset($_SESSION["email"])) {
               echo '<li><a href="">'.$_SESSION["email"].'</a></li>';
-              echo '<li><a href="../paginas/logout.php">Deslogue</a></li>';
+              echo '<li><a href="../paginas/logout.php">Salir</a></li>';
             } else {
-              echo '<li><a href="login.php">Login</a></li>';
-              echo '<li><a href="registro.php">Registro</a></li>';
+              echo '<li><a href="login.php">Entrar</a></li>';
+              echo '<li><a href="registro.php">Registrarme</a></li>';
             }
 
             ?>

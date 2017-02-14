@@ -6,19 +6,25 @@
 <?php
 
 if($_SESSION["rol"] != "admin") {
-  header ("Location: ../index.php");
+  header ("Location: ../paginas/index.php");
 }
+
+
+
 
 ?>
 
 
-  <div align="center">
-    <h1 align="center"></h1>
+  <div align="">
+    <h3 align="center">Usuarios</h3>
+
+
     <?php
 
 
           $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
           //Conexion a la base de datos (localhost, usuario, contraseña, bd).
+
 
           if ($connection->connect_errno) {
               printf("Connection failed: %s\n", $connection->connect_error);
@@ -36,14 +42,17 @@ if($_SESSION["rol"] != "admin") {
               } else {
                 //TABLA HTML
                 //Si existen que me muestre los usuarios en una tabla.
-                echo "<table border='1'>";
+
+                echo "<table class='table table-bordered'>";
                   echo "<tr>";
-                    echo "<td>ID</td>";
-                    echo "<td>EMAIL</td>";
-                    echo "<td>NOMBRE</td>";
-                    echo "<td>APELLIDOS</td>";
-                    echo "<td>DNI</td>";
-                    echo "<td>ROL</td>";
+                    echo "<th>ID</th>";
+                    echo "<th>EMAIL</th>";
+                    echo "<th>NOMBRE</th>";
+                    echo "<th>APELLIDOS</th>";
+                    echo "<th>DNI</th>";
+                    echo "<th>ROL</th>";
+                    echo "<th></th>";
+                    echo "<th></th>";
                   echo "</tr>";
 
                 while($obj = $result->fetch_object()) {
@@ -55,10 +64,15 @@ if($_SESSION["rol"] != "admin") {
                     echo "<td>".$obj->apellidos."</td>";
                     echo "<td>".$obj->dni."</td>";
                     echo "<td>".$obj->rol."</td>";
+                    echo "<td><a href='usuarios_editar.php?editar=$obj->id_usuario'>Editar</a></td>";
+                    echo "<td><a href='usuarios_eliminar.php?eliminar=$obj->id_usuario'>Eliminar</a></td>";
                   echo "</tr>";
 
 
                 };
+
+
+              echo "</table>";
 
 
               }
@@ -68,6 +82,10 @@ if($_SESSION["rol"] != "admin") {
 
 
     ?>
+
+
+
+
 
 
 </div>
