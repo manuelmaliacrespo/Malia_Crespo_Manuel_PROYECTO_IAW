@@ -20,11 +20,11 @@ $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
 
 //Si queremos eliminar
 if (isset($_GET["eliminar"])) {
-  $connection->query("delete from extras where id_extra=".$_GET["eliminar"]."");
+  $connection->query("delete from extras where id_extras=".$_GET["eliminar"]."");
 }
 
 
 
- header ('Location: usuarios.php');
+header ('Location: extras.php');
 
 ?>

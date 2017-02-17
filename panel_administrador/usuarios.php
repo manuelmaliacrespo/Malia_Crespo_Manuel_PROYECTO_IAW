@@ -17,7 +17,7 @@ if($_SESSION["rol"] != "admin") {
 
   <div align="">
     <h3 align="center">Usuarios</h3>
-
+    <p><a href="../paginas/registro.php">Para añadir un nuevo usuario ir al registro</a></p>
 
     <?php
 

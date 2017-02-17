@@ -62,7 +62,7 @@
                     <ul class="dropdown-menu">
                       <li><a href="../panel_administrador/usuarios.php">Usuarios</a></li>
                       <li><a href="../panel_administrador/viviendas.php">Viviendas</a></li>
-                      <li><a href="#">Extras</a></li>
+                      <li><a href="../panel_administrador/extras.php">Extras</a></li>
                     </ul>
                   </li>';
                 }

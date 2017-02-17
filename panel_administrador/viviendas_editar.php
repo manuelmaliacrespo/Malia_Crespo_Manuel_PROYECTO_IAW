@@ -18,7 +18,6 @@ if($_SESSION["rol"] != "admin") {
 
 
 
-
 <?php
 //SI HACE CLIC EN EL EDITAR
     if (isset($_POST["editar_viviendas"])) {
@@ -32,7 +31,17 @@ if($_SESSION["rol"] != "admin") {
       }
       //Validacion de la base de datos, en caso de error que lo muestre.
 
-      $consulta="update viviendas set nombre='".$_POST["nombre"]."' where id_vivienda='".$_POST["id_vivienda"]."'";
+      $consulta="update viviendas set nombre='".$_POST["nombre"]."',
+      localizacion='".$_POST["localizacion"]."',
+      dormitorios='".$_POST["dormitorios"]."',
+      personas='".$_POST["personas"]."',
+      mascotas='".$_POST["mascotas"]."',
+      precio_baja='".$_POST["precio_baja"]."',
+      precio_media='".$_POST["precio_media"]."',
+      precio_alta='".$_POST["precio_alta"]."',
+      descripcion='".$_POST["descripcion"]."'
+
+      where id_vivienda='".$_POST["id_vivienda"]."'";
 
 
 
@@ -99,12 +108,18 @@ if (isset($_GET["editar"])) {
         echo '<form action="viviendas_editar.php" method="post">
 
           <input type="hidden" value="'.$obj->id_vivienda.'" name="id_vivienda" readonly>
-          <p>NOMBRE: <input value="'.$obj->nombre.'" name="nombre" required></p>
+          <p>NOMBRE: <input type="text" value="'.$obj->nombre.'" name="nombre" required></p>
+          <p>LOCALIZACIÓN: <input type="text" value="'.$obj->localizacion.'" name="localizacion"></p>
+          <p>DORMITORIOS: <input type="text" value="'.$obj->dormitorios.'" name="dormitorios"></p>
+          <p>PERSONAS: <input type="text" value="'.$obj->personas.'" name="personas"></p>
+          <p>MASCOTAS: <input type="text" value="'.$obj->mascotas.'" name="mascotas"></p>
+          <p>TEMP. BAJA: <input type="text" value="'.$obj->precio_baja.'" name="precio_baja"></p>
+          <p>TEMP. MEDIA: <input type="text" value="'.$obj->precio_media.'" name="precio_media"></p>
+          <p>TEMP. ALTA: <input type="text" value="'.$obj->precio_alta.'" name="precio_alta"></p>
+          <p>DESCRIPCIÓN: <textarea name="descripcion" style="width:250px">'.$obj->descripcion.'</textarea></p>
 
 
-
-
-          <p><input type="submit" value="Editar" class="btn btn-primary" name="editar_viviendas"></p>
+          <p><input type="submit" value="Aceptar" class="btn btn-primary" name="editar_viviendas"></p>
 
         </form>';
 

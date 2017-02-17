@@ -9,8 +9,9 @@
   //Si el rol "NO" es admin mandame a index.php
 ?>
 
-  <div align="center">
-    <h1 align="center"></h1>
+  <div align="">
+    <h3 align="center">Viviendas</h3>
+    <p><a href="viviendas_insertar.php">Añadir nuevo vivienda</a></p>
     <?php
 
           //CREATING THE CONNECTION
@@ -36,9 +37,15 @@
                 echo "<table class='table table-bordered'>";
                   echo "<tr>";
                     echo "<th>ID</th>";
-                    echo "<th>Nombre</th>";
-                    echo "<th></th>";
-                    echo "<th></th>";
+                    echo "<th>NOMBRE</th>";
+                    echo "<th>LOCALIZACIÓN</th>";
+                    echo "<th>DORMITORIOS</th>";
+                    echo "<th>PERSONAS</th>";
+                    echo "<th>MASCOTAS</th>";
+                    echo "<th>TEMP. BAJA</th>";
+                    echo "<th>TEMP. MEDIA</th>";
+                    echo "<th>TEMP. ALTA</th>";
+
                   echo "</tr>";
 
                 while($obj = $result->fetch_object()) {
@@ -46,6 +53,16 @@
                   echo "<tr>";
                     echo "<td>".$obj->id_vivienda."</td>";
                     echo "<td>".$obj->nombre."</td>";
+                    echo "<td>".$obj->localizacion."</td>";
+                    echo "<td>".$obj->dormitorios."</td>";
+                    echo "<td>".$obj->personas."</td>";
+                    echo "<td>".$obj->mascotas."</td>";
+                    echo "<td>".$obj->precio_baja."</td>";
+                    echo "<td>".$obj->precio_media."</td>";
+                    echo "<td>".$obj->precio_alta."</td>";
+
+
+
                     echo "<td><a href='viviendas_editar.php?editar=$obj->id_vivienda'>Editar</a></td>";
                     echo "<td><a href='viviendas_eliminar.php?eliminar=$obj->id_vivienda'>Eliminar</a></td>";
                   echo "</tr>";

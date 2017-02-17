@@ -74,7 +74,7 @@ if (isset($_GET["editar"])) {
         echo '<form action="extras_editar.php" method="post">
 
           <input type="hidden" value="'.$obj->id_extras.'" name="id_extras" readonly>
-          <p>EMAIL: <input value="'.$obj->actividad.'" name="actividad" required></p>
+          <p>ACTIVIDAD: <input value="'.$obj->actividad.'" name="actividad" required></p>
 
 
           <p><input type="submit" value="Editar" class="btn btn-primary" name="editar_extras"></p>
