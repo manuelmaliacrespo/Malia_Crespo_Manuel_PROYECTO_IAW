@@ -32,7 +32,9 @@ if($_SESSION["rol"] != "admin") {
           }
           //Validacion de la base de datos, en caso de error que lo muestre.
 
-          $consulta="select * from reservas";
+          $consulta= "SELECT usuarios.email, viviendas.nombre AS nombre_vivienda, reservas.* FROM usuarios, reservas, viviendas
+                      WHERE usuarios.id_usuario=reservas.id_usuario
+                      AND reservas.id_vivienda=viviendas.id_vivienda";
 
           if ($result = $connection->query($consulta)) {
 
@@ -47,15 +49,27 @@ if($_SESSION["rol"] != "admin") {
                   echo "<tr>";
                     echo "<th>ID</th>";
                     echo "<th>ESTADO</th>";
+                    echo "<th>CLIENTE</th>";
+                    echo "<th>CASA</th>";
+                    echo "<th>F. RESERVA</th>";
+                    echo "<th>ENTRADA</th>";
+                    echo "<th>SALIDA</th>";
+                    echo "<th>CANTIDAD</th>";
                   echo "</tr>";
 
                 while($obj = $result->fetch_object()) {
 
                   echo "<tr>";
-                    echo "<td>".$obj->id_reservas."</td>";
+                    echo "<td>".$obj->id_reserva."</td>";
                     echo "<td>".$obj->estado."</td>";
-                    echo "<td><a href='extras_editar.php?editar=$obj->id_reservas'>Editar</a></td>";
-                    echo "<td><a href='extras_eliminar.php?eliminar=$obj->id_reservas'>Eliminar</a></td>";
+                    echo "<td>".$obj->email."</td>";
+                    echo "<td>".$obj->nombre_vivienda."</td>";
+                    echo "<td>".$obj->fecha_reserva."</td>";
+                    echo "<td>".$obj->fecha_entrada."</td>";
+                    echo "<td>".$obj->fecha_salida."</td>";
+                    echo "<td>".$obj->dinero_reserva."</td>";
+                    echo "<td><a href='reservas_editar.php?editar=$obj->id_reserva'>Editar</a></td>";
+                    echo "<td><a href='reservas_eliminar.php?eliminar=$obj->id_reserva'>Eliminar</a></td>";
                   echo "</tr>";
 
 

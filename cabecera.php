@@ -63,6 +63,7 @@
                       <li><a href="../panel_administrador/usuarios.php">Usuarios</a></li>
                       <li><a href="../panel_administrador/viviendas.php">Viviendas</a></li>
                       <li><a href="../panel_administrador/extras.php">Extras</a></li>
+                      <li><a href="../panel_administrador/reservas.php">Reservas</a></li>
                     </ul>
                   </li>';
                 }

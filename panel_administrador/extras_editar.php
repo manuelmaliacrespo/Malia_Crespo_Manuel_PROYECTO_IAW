@@ -51,7 +51,7 @@ if($_SESSION["rol"] != "admin") {
 
 
 <?php
-//VIENE DE USUARIOS.PHP RELLENAMOS EL FORMULARIO CON LOS DATOS DEL USUARIO.
+//1º VIENE DE EXTRAS.PHP (Nos trae por GET el id_extras que queremos editar) RELLENAMOS EL FORMULARIO CON LOS DATOS DEL USUARIO.
 if (isset($_GET["editar"])) {
 
   $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
