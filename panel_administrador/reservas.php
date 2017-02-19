@@ -15,8 +15,8 @@ if($_SESSION["rol"] != "admin") {
 
 
   <div align="">
-    <h3 align="center">Extras</h3>
-    <p><a href="extras_insertar.php">Añadir nuevo extra</a></p>
+    <h3 align="center">Reservas</h3>
+    <p><a href="reservas_insertar.php">Añadir nueva Reserva</a></p>
 
 
     <?php
@@ -32,13 +32,13 @@ if($_SESSION["rol"] != "admin") {
           }
           //Validacion de la base de datos, en caso de error que lo muestre.
 
-          $consulta="select * from extras";
+          $consulta="select * from reservas";
 
           if ($result = $connection->query($consulta)) {
 
               if ($result->num_rows===0) {
               //Si el resultado es = 0 que me muestre que no hay usuarios.
-                echo "Sin extras";
+                echo "Sin Reservas";
               } else {
                 //TABLA HTML
                 //Si existen que me muestre los usuarios en una tabla.
@@ -46,18 +46,16 @@ if($_SESSION["rol"] != "admin") {
                 echo "<table class='table table-bordered'>";
                   echo "<tr>";
                     echo "<th>ID</th>";
-                    echo "<th>Actividad</th>";
-                    echo "<th>Precio</th>";
+                    echo "<th>ESTADO</th>";
                   echo "</tr>";
 
                 while($obj = $result->fetch_object()) {
 
                   echo "<tr>";
-                    echo "<td>".$obj->id_extras."</td>";
-                    echo "<td>".$obj->actividad."</td>";
-                    echo "<td>".$obj->precio."</td>";
-                    echo "<td><a href='extras_editar.php?editar=$obj->id_extras'>Editar</a></td>";
-                    echo "<td><a href='extras_eliminar.php?eliminar=$obj->id_extras'>Eliminar</a></td>";
+                    echo "<td>".$obj->id_reservas."</td>";
+                    echo "<td>".$obj->estado."</td>";
+                    echo "<td><a href='extras_editar.php?editar=$obj->id_reservas'>Editar</a></td>";
+                    echo "<td><a href='extras_eliminar.php?eliminar=$obj->id_reservas'>Eliminar</a></td>";
                   echo "</tr>";
 
 
