@@ -16,7 +16,7 @@ if($_SESSION["rol"] != "admin") {
 
   <div align="">
     <h3 align="center">Reservas</h3>
-    <p><a href="reservas_insertar.php">Añadir nueva Reserva</a></p>
+  
 
 
     <?php
