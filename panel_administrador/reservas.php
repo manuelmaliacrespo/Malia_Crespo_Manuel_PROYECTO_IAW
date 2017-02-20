@@ -16,7 +16,7 @@ if($_SESSION["rol"] != "admin") {
 
   <div align="">
     <h3 align="center">Reservas</h3>
-  
+
 
 
     <?php
@@ -39,11 +39,11 @@ if($_SESSION["rol"] != "admin") {
           if ($result = $connection->query($consulta)) {
 
               if ($result->num_rows===0) {
-              //Si el resultado es = 0 que me muestre que no hay usuarios.
+              //Si el resultado es = 0 que me muestre "No hay usuarios".
                 echo "Sin Reservas";
               } else {
                 //TABLA HTML
-                //Si existen que me muestre los usuarios en una tabla.
+                //Si existen que me muestre los usuarios en una tabla con los datos de ( usuario, reserva, vivienda ).
 
                 echo "<table class='table table-bordered'>";
                   echo "<tr>";

@@ -24,7 +24,7 @@ if (isset($_GET["eliminar"])) {
 }
 
 
-
+ //Si se ha eliminado -> Redirigir a usuarios.php
  header ('Location: usuarios.php');
 
 ?>

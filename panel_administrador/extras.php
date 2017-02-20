@@ -17,6 +17,7 @@ if($_SESSION["rol"] != "admin") {
   <div align="">
     <h3 align="center">Extras</h3>
     <p><a href="extras_insertar.php">Añadir nuevo extra</a></p>
+    <!-- Boton debajo de extras -->
 
 
     <?php
@@ -37,11 +38,11 @@ if($_SESSION["rol"] != "admin") {
           if ($result = $connection->query($consulta)) {
 
               if ($result->num_rows===0) {
-              //Si el resultado es = 0 que me muestre que no hay usuarios.
+              //Si el resultado es = 0, mostrar "Sin extras".
                 echo "Sin extras";
               } else {
-                //TABLA HTML
-                //Si existen que me muestre los usuarios en una tabla.
+
+                //Si existe, mostrar usuarios en una tabla.
 
                 echo "<table class='table table-bordered'>";
                   echo "<tr>";
@@ -58,6 +59,7 @@ if($_SESSION["rol"] != "admin") {
                     echo "<td>".$obj->precio."</td>";
                     echo "<td><a href='extras_editar.php?editar=$obj->id_extras'>Editar</a></td>";
                     echo "<td><a href='extras_eliminar.php?eliminar=$obj->id_extras'>Eliminar</a></td>";
+
                   echo "</tr>";
 
 

@@ -18,13 +18,13 @@ $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
 
 
 
-//Si queremos eliminar
+//Si queremos eliminar un extra.
 if (isset($_GET["eliminar"])) {
   $connection->query("delete from extras where id_extras=".$_GET["eliminar"]."");
 }
 
 
-
+//Redireccion a index.php
 header ('Location: extras.php');
 
 ?>

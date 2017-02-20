@@ -31,10 +31,11 @@ if($_SESSION["rol"] != "admin") {
 
       $consulta="update extras set actividad='".$_POST["actividad"]."', precio='".$_POST["precio"]."' WHERE id_extras='".$_POST["id_extras"]."'";
       echo $consulta;
+      //Actualizar datos con los campos de la tabla extras (id_extras, actividad, precio).
 
       if ($result = $connection->query($consulta)) {
 
-            //VALID LOGIN. SETTING SESSION VARS
+            //Si el resultado OK consulta, redirigirme a EXTRAS.PHP
             header ("Location: extras.php");
 
       } else {
@@ -63,11 +64,12 @@ if (isset($_GET["editar"])) {
   if ($result = $connection->query($consulta)) {
 
       if ($result->num_rows===0) {
+      //Si el resultado es = 0 mostar "No existe el extra".
 
         echo "No existe el extra";
       } else {
 
-
+        //Si existe...
         $obj = $result->fetch_object();
 
         echo '<form action="extras_editar.php" method="post">

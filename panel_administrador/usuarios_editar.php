@@ -39,7 +39,7 @@ if($_SESSION["rol"] != "admin") {
 
       if ($result = $connection->query($consulta)) {
 
-            //VALID LOGIN. SETTING SESSION VARS
+            //Si el resultado de la consulta no es -> Redirigirme a usuarios.php
             header ("Location: usuarios.php");
 
       } else {
@@ -89,7 +89,7 @@ if (isset($_GET["editar"])) {
   if ($result = $connection->query($consulta)) {
 
       if ($result->num_rows===0) {
-
+      //Si el resultado de la consulta = 0, mostrar "No existe el usuario".
         echo "No existe el usuario";
       } else {
 

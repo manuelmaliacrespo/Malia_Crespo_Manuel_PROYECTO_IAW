@@ -19,7 +19,7 @@ if($_SESSION["rol"] != "admin") {
 <?php
 //SI HACE CLIC EN EL EDITAR
     if (isset($_POST["editar_reservas"])) {
-    //Si existe el campo registro...
+    //Si existe el campo reserva...
       $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
       //Conexion a la base de datos (localhost, usuario, contraseña, bd).
 
@@ -71,11 +71,14 @@ if (isset($_GET["editar"])) {
   if ($result = $connection->query($consulta)) {
 
       if ($result->num_rows===0) {
+      //Si el resultado de la consulta = 0, mostrar "No existe la reserva".
 
         echo "No existe la reserva";
       } else {
 
-
+        //Si existe rellenar los datos en el formulario.
+        //$_POST necesito todos los values y necesito id para usarla en la consulta.
+        //No quiero que se use por eso el HIDDEN.
         $obj = $result->fetch_object();
 
         echo '<form action="reservas_editar.php" method="post">

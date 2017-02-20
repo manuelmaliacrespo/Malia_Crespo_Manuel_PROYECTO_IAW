@@ -34,11 +34,12 @@ if($_SESSION["rol"] != "admin") {
       $consulta="insert into extras (actividad, precio)
       VALUES ('".$_POST["actividad"]."',
       '".$_POST["precio"]."')";
+      //Insertar en extras ( actividad , precio ).
 
 
       if ($result = $connection->query($consulta)) {
 
-            //VALID LOGIN. SETTING SESSION VARS
+            //Consulta fallida -> Redireccionarme a "extras.php".
             header ("Location: extras.php");
 
       } else {
@@ -55,24 +56,11 @@ if($_SESSION["rol"] != "admin") {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 <form action="extras_insertar.php" method="post">
 
           <p>ACTIVIDAD: <input type="text" value="" name="actividad"></p>
           <p>PRECIO: <input type="text" value="" name="precio"></p>
-
-
-
+          <!--Campos para insertar ( actividad, precio ). -->
 
 <p><input type="submit" value="Insertar nuevo" class="btn btn-primary" name="insertar_extras"></p>
 

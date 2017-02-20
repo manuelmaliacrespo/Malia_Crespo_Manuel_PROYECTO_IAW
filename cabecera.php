@@ -77,7 +77,7 @@
             //Si existe email, lo mostramos y añadimos boton para deslogarse.
             //En caso contrario añadimos el boton login y registro.
             if (isset($_SESSION["email"])) {
-              echo '<li><a href="">'.$_SESSION["email"].'</a></li>';
+              echo '<li><a href="../paginas/perfil.php"><u>'.$_SESSION["email"].'</u></a></li>';
               echo '<li><a href="../paginas/logout.php">Salir</a></li>';
             } else {
               echo '<li><a href="login.php">Entrar</a></li>';

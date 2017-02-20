@@ -8,6 +8,7 @@
     <h1 align="center">Inserte sus datos</h1>
     <?php
         //FORM SUBMITTED
+        //Si esxiste el login por $ POST conectarse a la base de datos.
         if (isset($_POST["login"])) {
           //CREATING THE CONNECTION
           $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
@@ -28,6 +29,7 @@
           if ($result = $connection->query($consulta)) {
               //No rows returned
               if ($result->num_rows===0) {
+              //Si el resultado de la consulta = 0 mostrarme "LOGIN INVALIDO".
                 echo "LOGIN INVALIDO";
               } else {
                 //VALID LOGIN. SETTING SESSION VARS
@@ -36,6 +38,8 @@
                 $obj = $result->fetch_object();
 
                 //Incluimos cada campo en session.
+                //Incluimos en la $SESSION cada uno de los resultados del formulario.
+                $_SESSION["id_usuario"] = $obj->id_usuario;
                 $_SESSION["email"] = $obj->email;
                 $_SESSION["nombre"] = $obj->nombre;
                 $_SESSION["apellidos"] = $obj->apellidos;
@@ -44,6 +48,7 @@
                 $_SESSION["language"]="es";
 
                 header("Location: index.php");
+                //Redireccion a index.php
               }
           } else {
             echo "Wrong Query";

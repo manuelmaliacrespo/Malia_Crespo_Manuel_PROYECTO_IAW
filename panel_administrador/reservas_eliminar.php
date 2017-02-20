@@ -24,7 +24,7 @@ if (isset($_GET["eliminar"])) {
 }
 
 
-
+//Una vez eliminada -> Redirigir a Reservas.php
 header ('Location: reservas.php');
 
 ?>
