@@ -7,7 +7,7 @@
 if($_SESSION["rol"] != "admin") {
   header ("Location: ../paginas/index.php");
 }
-//Si el rol "NO" es admin mandame a index.php
+//Si el rol "NO" es admin redirigir a index.php
 ?>
 
 
@@ -23,7 +23,7 @@ if($_SESSION["rol"] != "admin") {
 <?php
 //SI HACE CLIC EN EL EDITAR
     if (isset($_POST["editar_usuario"])) {
-    //Si existe el campo registro...
+    //Si existe el campo editar_usuario...
       $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
       //Conexion a la base de datos (localhost, usuario, contraseña, bd).
 
@@ -33,7 +33,11 @@ if($_SESSION["rol"] != "admin") {
       }
       //Validacion de la base de datos, en caso de error que lo muestre.
 
-      $consulta="update usuarios set email='".$_POST["email"]."', nombre='".$_POST["nombre"]."',  apellidos='".$_POST["apellidos"]."', dni='".$_POST["dni"]."', rol='".$_POST["rol"]."' where id_usuario='".$_POST["id_usuario"]."'";
+      $consulta="update usuarios set email='".$_POST["email"]."',
+        nombre='".$_POST["nombre"]."',
+        apellidos='".$_POST["apellidos"]."',
+        dni='".$_POST["dni"]."', rol='".$_POST["rol"]."'
+        where id_usuario='".$_POST["id_usuario"]."'";
 
       echo $consulta;
 

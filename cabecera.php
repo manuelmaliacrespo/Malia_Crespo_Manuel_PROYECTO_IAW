@@ -15,7 +15,7 @@
     <meta name="author" content="">
     <link rel="icon" href="">
 
-    <title>Alquiler de viviendas</title>
+    <title>Escápate a la luz del Sur</title>
 
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">

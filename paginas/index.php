@@ -17,32 +17,31 @@
     <li data-target="#carousel-example-generic" data-slide-to="3"></li>
   </ol>
   <!--Parte del carrusel -->
-  <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
       <img style="height:400px; width:100%;" src="../images/carrusel/montana.jpeg" alt="...">
       <div class="carousel-caption">
-        Montaña
+        Pinares y Mar en Caños de Meca
       </div>
     </div>
     <div class="item">
-      <img style="height:400px; width:100%;" src="../images/carrusel/faro.jpg" alt="...">
+      <img style="height:400px; width:100%;" src="../images/carrusel/faro_izquierda.jpeg" alt="...">
       <div class="carousel-caption">
-        Faro
+        El verde se funde con el turquesa
       </div>
     </div>
 
     <div class="item">
       <img style="height:400px; width:100%;" src="../images/carrusel/noche.jpg" alt="...">
       <div class="carousel-caption">
-        Noche
+        La Luna te envuelve
       </div>
     </div>
 
     <div class="item">
       <img style="height:400px; width:100%;" src="../images/carrusel/surf.png" alt="...">
       <div class="carousel-caption">
-        Surf
+        Deportes acuáticos
       </div>
     </div>
 
