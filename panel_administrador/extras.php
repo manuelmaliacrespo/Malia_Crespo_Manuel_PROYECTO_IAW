@@ -24,14 +24,14 @@ if($_SESSION["rol"] != "admin") {
 
 
           $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
-          //Conexion a la base de datos (localhost, usuario, contraseña, bd).
+          //Conexion a la base de datos.
 
 
           if ($connection->connect_errno) {
               printf("Connection failed: %s\n", $connection->connect_error);
               exit();
           }
-          //Validacion de la base de datos, en caso de error que lo muestre.
+          //Validacion de la base de datos.
 
           $consulta="select * from extras";
 

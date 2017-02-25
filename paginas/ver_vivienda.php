@@ -11,26 +11,31 @@
 <?php
 
 $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
+//Conexion a la base de datos.
 
 if ($connection->connect_errno) {
     printf("Connection failed: %s\n", $connection->connect_error);
     exit();
 }
+//Validación.
 
 
 
 
     if (isset($_GET["id_vivienda"])) {
+    //Si existe peticion $_GET "id_vivienda"...
 
       $consulta="select * from viviendas where id_vivienda = ".$_GET["id_vivienda"];
+      //Consulta solicitando * vivienda para extraer el id de vivienda.
 
       if ($result = $connection->query($consulta)) {
 
           if ($result->num_rows===0) {
+          //Si el resultado es = 0
 
           } else {
 
-            //PARTE DE LA INFORMACIÓN DE LA VIVIENDA.
+            //Muestrame la vivienda
             echo "<h4>Información</h4>";
             //Recuperamos el resultado de la consulta.
             $obj = $result->fetch_object();
@@ -51,6 +56,7 @@ if ($connection->connect_errno) {
 
             //Recuperamos el mes actual.
             $mes_actual = date("n");
+            //Creo $mes_actual "n" muestra el mes.
 
             //Si el mes actual es desde Julio a Septiembre: Guardar en variable el precio de alta.
             if($mes_actual >= 7 && $mes_actual <= 9) {
@@ -67,7 +73,7 @@ if ($connection->connect_errno) {
 
 
 
-            //FORMULARIO PARA RESERVAR VIVIENDA.
+            //Formulario para reservar la vivienda.
             echo '<h4>Hacer Reserva</h4>';
             echo '<form action="reservar_vivienda.php" method="post">';
 
@@ -82,6 +88,7 @@ if ($connection->connect_errno) {
                 echo '<p><input type="submit" value="Reservar" class="btn btn-primary" name="reservar_vivienda"></p>';
               } else {
                 echo '<i><b>Debe estar registrado para poder reservar la vivienda.</b></i>';
+                //En caso de no estar logado se muestra este mensaje.
               }
 
             echo '</form>';

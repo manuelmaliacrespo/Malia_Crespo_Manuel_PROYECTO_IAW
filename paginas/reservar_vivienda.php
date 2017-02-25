@@ -7,18 +7,23 @@
 <?php
 
     if (isset($_POST["reservar_vivienda"])) {
+    //Si existe petición $_POST reservar_vivienda
 
       $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
+      //Conexion base de datos
 
       if ($connection->connect_errno) {
           printf("Connection failed: %s\n", $connection->connect_error);
           exit();
       }
+      //Validación
 
       $consulta="INSERT INTO reservas (fecha_entrada, fecha_salida, estado, dinero_reserva, fecha_reserva, id_usuario, id_vivienda)
       VALUES ('".$_POST["fecha_entrada"]."', '".$_POST["fecha_salida"]."', 'PENDIENTE', '".$_POST["dinero_reserva"]."', now(), '".$_SESSION["id_usuario"]."', '".$_POST["id_vivienda"]."')";
+      //Consulta para insertar "reserva" con campos de reserva.
 
       if ($result = $connection->query($consulta)) {
+      //Si hay resultado...
 
 
 
@@ -29,6 +34,7 @@
 
       } else {
         echo "Wrong Query";
+        //Fallo en la query.
       }
 
   }
