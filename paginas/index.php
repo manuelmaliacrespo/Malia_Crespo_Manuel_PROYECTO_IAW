@@ -3,6 +3,17 @@
 
 
 
+<?php
+//ABRIMOS CONEXIÓN A LA BASE DE DATOS.
+$connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
+
+if ($connection->connect_errno) {
+  printf("Connection failed: %s\n", $connection->connect_error);
+  exit();
+}
+?>
+
+
 
 
 
@@ -57,6 +68,70 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+
+<!-- MOSTRANDO VIVIENDAS -->
+<?php
+if ($result = $connection->query("SELECT * FROM viviendas")) {
+
+  //Si la consulta devuelve 0 rows, mostrar "Sin viviendas"
+  if ($result->num_rows===0) {
+      echo "Sin viviendas";
+
+  } else {
+    //Mostramos contenido.
+    while($obj = $result->fetch_object()) {
+
+      //echo $obj->foto1;
+      echo "<div style='float:left; margin:0px 30px 50px 0px;'>";
+
+        echo "<div style='border:1px gray solid; width:180px; height:200px; align:center;'>";
+        echo "Nombre: <b>".$obj->nombre."</b>";
+        echo "<br>";
+        echo "Ubicacion: <b>".$obj->localizacion."</b>";
+        echo "<br>";
+        echo "<img class='img-rounded' style='width:160px;' src='../images/viviendas/".$obj->foto1."'></img><br>";
+        echo "<a href='ver_vivienda.php?id_vivienda=$obj->id_vivienda'>Ver vivienda</a>";
+        echo "</div>";
+      echo "</div>";
+
+    }
+
+
+  }
+
+} else {
+    echo "Wrong Query";
+}
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

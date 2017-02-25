@@ -127,6 +127,7 @@ if (!isset($_SESSION["email"])) {
                     echo "<th>ESTADO</th>";
                     echo "<th>VIVIENDA</th>";
 
+
                   echo "</tr>";
 
                 while($obj = $result->fetch_object()) {

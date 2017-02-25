@@ -34,6 +34,7 @@ if($_SESSION["rol"] != "admin") {
 
           $consulta="select * from usuarios";
 
+
           if ($result = $connection->query($consulta)) {
 
               if ($result->num_rows===0) {
@@ -65,7 +66,9 @@ if($_SESSION["rol"] != "admin") {
                     echo "<td>".$obj->dni."</td>";
                     echo "<td>".$obj->rol."</td>";
                     echo "<td><a href='usuarios_editar.php?editar=$obj->id_usuario'>Editar</a></td>";
+                    //id_usuario -> Editar
                     echo "<td><a href='usuarios_eliminar.php?eliminar=$obj->id_usuario'>Eliminar</a></td>";
+                    //id_usuario -> Eliminar
                   echo "</tr>";
 
 

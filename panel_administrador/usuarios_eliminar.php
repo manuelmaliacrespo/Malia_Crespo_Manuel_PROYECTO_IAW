@@ -6,7 +6,7 @@ if($_SESSION["rol"] != "admin") {
 
  header ("Location: ../paginas/index.php");
 }
-//Si el rol "NO" es admin mandame a index.php
+//Si el rol "NO" es admin redirigir a index.php
 
 
 
@@ -21,6 +21,7 @@ $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
 //Si queremos eliminar
 if (isset($_GET["eliminar"])) {
   $connection->query("delete from usuarios where id_usuario=".$_GET["eliminar"]."");
+  //Borrar usuario ( id_usuario )
 }
 
 

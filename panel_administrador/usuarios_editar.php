@@ -32,7 +32,7 @@ if($_SESSION["rol"] != "admin") {
           exit();
       }
       //Validacion de la base de datos, en caso de error que lo muestre.
-
+      //Actualizar usuarios con todos los datos de usuarios.
       $consulta="update usuarios set email='".$_POST["email"]."',
         nombre='".$_POST["nombre"]."',
         apellidos='".$_POST["apellidos"]."',
@@ -88,6 +88,7 @@ if (isset($_GET["editar"])) {
   //Conexion a la base de datos (localhost, usuario, contraseña, bd).
 
   $consulta = "select * from usuarios where id_usuario=".$_GET["editar"]."";
+  //Seleccionar todos los datos de los usuarios (editar).
 
 
   if ($result = $connection->query($consulta)) {

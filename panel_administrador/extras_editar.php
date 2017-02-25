@@ -29,7 +29,9 @@ if($_SESSION["rol"] != "admin") {
       }
       //Validacion de la base de datos, en caso de error que lo muestre.
 
-      $consulta="update extras set actividad='".$_POST["actividad"]."', precio='".$_POST["precio"]."' WHERE id_extras='".$_POST["id_extras"]."'";
+      $consulta="update extras set actividad='".$_POST["actividad"]."',
+       precio='".$_POST["precio"]."'
+       WHERE id_extras='".$_POST["id_extras"]."'";
       echo $consulta;
       //Actualizar datos con los campos de la tabla extras (id_extras, actividad, precio).
 
