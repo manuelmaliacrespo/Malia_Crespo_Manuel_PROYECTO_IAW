@@ -6,6 +6,7 @@
 
 if($_SESSION["rol"] != "admin") {
   header ("Location: ../paginas/index.php");
+  //Redireccion a index.php si no es admin.
 }
 
 
