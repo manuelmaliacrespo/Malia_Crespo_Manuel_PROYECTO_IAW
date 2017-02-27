@@ -50,6 +50,8 @@ if($_SESSION["rol"] != "admin") {
                     echo "<th>ID</th>";
                     echo "<th>Actividad</th>";
                     echo "<th>Precio</th>";
+                    echo "<th>Foto</th>";
+                    echo "<th>Descripcion</th>";
                   echo "</tr>";
 
                 while($obj = $result->fetch_object()) {
@@ -58,6 +60,8 @@ if($_SESSION["rol"] != "admin") {
                     echo "<td>".$obj->id_extras."</td>";
                     echo "<td>".$obj->actividad."</td>";
                     echo "<td>".$obj->precio."</td>";
+                    echo "<td>".$obj->foto."</td>";
+                    echo "<td>".$obj->descripcion."</td>";
                     echo "<td><a href='extras_editar.php?editar=$obj->id_extras'>Editar</a></td>";
                     echo "<td><a href='extras_eliminar.php?eliminar=$obj->id_extras'>Eliminar</a></td>";
 

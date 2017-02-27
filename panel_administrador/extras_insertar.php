@@ -14,7 +14,7 @@ if($_SESSION["rol"] != "admin") {
 
 
 
-
+<h3 align="center">Insertar Extras</h3>
 
 
 
@@ -31,9 +31,9 @@ if($_SESSION["rol"] != "admin") {
       }
       //Validacion de la base de datos, en caso de error que lo muestre.
 
-      $consulta="insert into extras (actividad, precio)
-      VALUES ('".$_POST["actividad"]."',
-      '".$_POST["precio"]."')";
+      $consulta="insert into extras (actividad, precio, foto, descripcion)
+      VALUES ('".$_POST["actividad"]."', '".$_POST["precio"]."', '".$_POST["foto"]."',
+      '".$_POST["descripcion"]."')";
       //Insertar en extras ( actividad , precio ).
 
 
@@ -60,6 +60,8 @@ if($_SESSION["rol"] != "admin") {
 
           <p>ACTIVIDAD: <input type="text" value="" name="actividad"></p>
           <p>PRECIO: <input type="text" value="" name="precio"></p>
+          <p>FOTO: <input type="text" value="" name="foto"></p>
+          <p>DESCRIPCION: <textarea name="descripcion"></textarea></p>
           <!--Campos para insertar ( actividad, precio ). -->
 
 <p><input type="submit" value="Insertar nuevo" class="btn btn-primary" name="insertar_extras"></p>

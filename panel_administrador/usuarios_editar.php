@@ -15,7 +15,7 @@ if($_SESSION["rol"] != "admin") {
 
 
 
-
+<h3 align="center">Usuarios Editar</h3>
 
 
 

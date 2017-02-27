@@ -14,7 +14,7 @@ if($_SESSION["rol"] != "admin") {
 
 
 
-
+<h3 align="center">Editar Extras</h3>
 
 <?php
 //SI HACE CLIC EN EL EDITAR
@@ -30,8 +30,11 @@ if($_SESSION["rol"] != "admin") {
       //Validacion de la base de datos, en caso de error que lo muestre.
 
       $consulta="update extras set actividad='".$_POST["actividad"]."',
+       foto='".$_POST["foto"]."',
+       descripcion='".$_POST["descripcion"]."',
        precio='".$_POST["precio"]."'
        WHERE id_extras='".$_POST["id_extras"]."'";
+
       echo $consulta;
       //Actualizar datos con los campos de la tabla extras (id_extras, actividad, precio).
 
@@ -78,7 +81,9 @@ if (isset($_GET["editar"])) {
 
           <input type="hidden" value="'.$obj->id_extras.'" name="id_extras" readonly>
           <p>ACTIVIDAD: <input value="'.$obj->actividad.'" name="actividad" required></p>
+          <p>FOTO: <input value="'.$obj->foto.'" name="foto"></p>
           <p>PRECIO: <input value="'.$obj->precio.'" name="precio"></p>
+          <p>DESCRIPCION: <textarea name="descripcion">'.$obj->descripcion.'</textarea></p>
 
 
           <p><input type="submit" value="Editar" class="btn btn-primary" name="editar_extras"></p>

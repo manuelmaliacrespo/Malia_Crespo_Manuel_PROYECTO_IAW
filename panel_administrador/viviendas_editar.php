@@ -13,7 +13,7 @@ if($_SESSION["rol"] != "admin") {
 
 
 
-
+<h3 align="center">Viviendas Editar</h3>
 
 
 
@@ -39,6 +39,11 @@ if($_SESSION["rol"] != "admin") {
       precio_baja='".$_POST["precio_baja"]."',
       precio_media='".$_POST["precio_media"]."',
       precio_alta='".$_POST["precio_alta"]."',
+      foto1='".$_POST["foto1"]."',
+      foto2='".$_POST["foto2"]."',
+      foto3='".$_POST["foto3"]."',
+      foto4='".$_POST["foto4"]."',
+      foto5='".$_POST["foto5"]."',
       descripcion='".$_POST["descripcion"]."'
 
       where id_vivienda='".$_POST["id_vivienda"]."'";
@@ -116,6 +121,11 @@ if (isset($_GET["editar"])) {
           <p>TEMP. BAJA: <input type="text" value="'.$obj->precio_baja.'" name="precio_baja"></p>
           <p>TEMP. MEDIA: <input type="text" value="'.$obj->precio_media.'" name="precio_media"></p>
           <p>TEMP. ALTA: <input type="text" value="'.$obj->precio_alta.'" name="precio_alta"></p>
+          <p>FOTO: <input type="text" name="foto1" value="'.$obj->foto1.'"required></p>
+          <p>FOTO2: <input type="text" name="foto2" value="'.$obj->foto2.'"></p>
+          <p>FOTO3: <input type="text" name="foto3" value="'.$obj->foto3.'"></p>
+          <p>FOTO4: <input type="text" name="foto4" value="'.$obj->foto4.'"></p>
+          <p>FOTO5: <input type="text" name="foto5" value="'.$obj->foto5.'"></p>
           <p>DESCRIPCIÓN: <textarea name="descripcion" style="width:250px">'.$obj->descripcion.'</textarea></p>
 
 

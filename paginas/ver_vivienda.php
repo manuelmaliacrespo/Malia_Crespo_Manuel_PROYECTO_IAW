@@ -42,13 +42,18 @@ if ($connection->connect_errno) {
 
             echo "<div>";
               echo "<align='center'>";
-              echo "<img class='img-rounded' style='width:300px;' src='../images/viviendas/".$obj->foto1."'></img>";
+              echo "<img class='img-rounded' style='width:300px;' src='../images/viviendas/".$obj->foto1."'></img><br><br>";
+              echo "<img class='img-rounded' style='width:100px;' src='../images/viviendas/".$obj->foto2."'></img>";
+              echo "<img class='img-rounded' style='width:100px;' src='../images/viviendas/".$obj->foto3."'></img>";
+              echo "<img class='img-rounded' style='width:100px;' src='../images/viviendas/".$obj->foto4."'></img>";
+              echo "<img class='img-rounded' style='width:100px;' src='../images/viviendas/".$obj->foto5."'></img><br>";
               echo "<br><b>Nombre:</b> ".$obj->nombre;
               echo "<br><b>Ubicación:</b> ".$obj->localizacion;
               echo "<br><b>Descripcion:</b> ".$obj->descripcion;
               echo "<br><b>Temp. Baja:</b> ".$obj->precio_baja;
               echo "<br><b>Temp. Media:</b> ".$obj->precio_media;
               echo "<br><b>Temp. Alta:</b> ".$obj->precio_alta;
+              //Mostar los datos (informacion) de la vivienda seleccionada.
             echo "</div>";
 
 

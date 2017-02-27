@@ -52,7 +52,7 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="#">Contacto</a></li>
+              <li><a href="../paginas/actividades.php">Actividades</a></li>
 
               <?php
                 //Si el rol es admin, muestrame el boton Panel de Control (--).

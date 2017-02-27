@@ -13,7 +13,7 @@ if($_SESSION["rol"] != "admin") {
 
 
 
-
+<h3 align="center">Editar Reservas</h3>
 
 
 <?php
