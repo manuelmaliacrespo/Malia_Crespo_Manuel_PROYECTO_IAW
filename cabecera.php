@@ -15,7 +15,7 @@
     <meta name="author" content="">
     <link rel="icon" href="">
 
-    <title>Escápate a la luz del Sur</title>
+    <title>Escápate al Sur</title>
 
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +47,7 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="../paginas/index.php">Cádizerestú</a>
+            <a class="navbar-brand" href="../paginas/index.php">Trafalgarerestú</a>
             <!--Nombre de la web.-->
           </div>
           <div id="navbar" class="navbar-collapse collapse">

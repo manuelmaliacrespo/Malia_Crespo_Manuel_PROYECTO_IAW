@@ -83,8 +83,8 @@ if ($connection->connect_errno) {
             echo '<form action="reservar_vivienda.php" method="post">';
 
               echo '<input type="hidden" name="id_vivienda" value="'.$obj->id_vivienda.'">';
-              echo '<p>Fecha Entrada: <input type="date" name="fecha_entrada"></p>';
-              echo '<p>Fecha Salida: <input type="date" name="fecha_salida"></p>';
+              echo '<p>Fecha Entrada: <input type="date" name="fecha_entrada" required></p>';
+              echo '<p>Fecha Salida: <input type="date" name="fecha_salida" required></p>';
               echo '<p>Precio/día: <input type="text" value="'.$precio_cobrar.'" name="dinero_reserva" readonly></p>';
 
 

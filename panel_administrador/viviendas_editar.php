@@ -13,7 +13,7 @@ if($_SESSION["rol"] != "admin") {
 
 
 
-<h3 align="center">Viviendas Editar</h3>
+<h3 align="center">Editar Viviendas</h3>
 
 
 

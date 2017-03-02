@@ -92,10 +92,11 @@ if ($result = $connection->query("SELECT * FROM viviendas")) {
 
   } else {
     //Mostramos contenido.
+    echo '<div class="row">';
     while($obj = $result->fetch_object()) {
 
       //echo $obj->foto1;
-      echo "<div style='float:left; margin:0px 30px 50px 0px;'>";
+      /*echo "<div style='float:left; margin:0px 30px 50px 0px;'>";
 
         echo "<div style='border:1px gray solid; width:180px; height:200px; align:center;'>";
         echo "Nombre: <b>".$obj->nombre."</b>";
@@ -105,9 +106,23 @@ if ($result = $connection->query("SELECT * FROM viviendas")) {
         echo "<img class='img-rounded' style='width:160px;' src='../images/viviendas/".$obj->foto1."'></img><br>";
         echo "<a href='ver_vivienda.php?id_vivienda=$obj->id_vivienda'>Ver vivienda</a>";
         echo "</div>";
-      echo "</div>";
+      echo "</div>";*/
+
+      echo '
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img style="height:220px; width:400px;" src="../images/viviendas/'.$obj->foto1.'" alt="...">
+          <div class="caption">
+            <h3>'.$obj->nombre.'</h3>
+            <p>'.$obj->localizacion.'</p>
+            <p><a href="ver_vivienda.php?id_vivienda='.$obj->id_vivienda.'" class="btn btn-primary" role="button">Ver vivienda</a> <a href="ver_comentarios.php?id_vivienda='.$obj->id_vivienda.'" class="btn btn-default" role="button">Comentarios</a></p>
+          </div>
+        </div>
+      </div>';
 
     }
+
+    echo '</div>';
 
 
   }

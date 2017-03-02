@@ -11,7 +11,7 @@ if (!isset($_SESSION["email"])) {
 
 
 
-
+  <h3 align="center">Mi Perfil</h3>
 
 
 
@@ -44,7 +44,7 @@ if (!isset($_SESSION["email"])) {
               $_SESSION['dni'] = $_POST["dni"];
 
               //Redirigir a perfil.php
-              header ("Location: perfil.php");
+              //header ("Location: perfil.php");
 
         } else {
           echo "Algunos datos están incorrectos o el email ya existe en nuestra base de datos.";
@@ -54,7 +54,7 @@ if (!isset($_SESSION["email"])) {
   ?>
 
 
-  <h3 align="center">Mi Perfil</h3>
+
 
 
   <!-- formulario de la pagina perfil -->
