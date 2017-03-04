@@ -1,3 +1,4 @@
+<!--SELECT usu.nombre, usu.apellidos, va.*, vi.nombre as nombre_vivienda FROM valoracion va, usuarios usu, viviendas vi WHERE va.id_vivienda=vi.id_vivienda AND va.id_usuario=usu.id_usuario-->
 <!-- Incluyendo la parte del código de la cabecera (principalmente menú)-->
 <?php include '../cabecera.php'; ?>
 
@@ -29,14 +30,15 @@ if ($connection->connect_errno) {
       FROM valoracion va, usuarios usu, viviendas vi
       WHERE va.id_vivienda=vi.id_vivienda
       AND va.id_usuario=usu.id_usuario
-      AND va.id_vivienda='.$_GET["id_vivienda"].'';
+      AND va.id_vivienda='.$_GET["id_vivienda"].'
+      ORDER BY va.fecha desc';
       //Consulta solicitando * vivienda para extraer el id de vivienda.
 
       if ($result = $connection->query($consulta)) {
 
           if ($result->num_rows===0) {
           //Si el resultado es = 0
-          echo "No hay comentarios.";
+          echo "No hay comentarios.<br>";
           } else {
 
 
