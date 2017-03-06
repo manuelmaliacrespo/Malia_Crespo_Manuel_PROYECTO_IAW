@@ -61,25 +61,6 @@ if($_SESSION["rol"] != "admin") {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
 //VIENE DE USUARIOS.PHP RELLENAMOS EL FORMULARIO CON LOS DATOS DEL USUARIO.
 if (isset($_GET["editar"])) {

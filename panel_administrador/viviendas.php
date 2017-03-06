@@ -11,7 +11,7 @@
 
   <div align="">
     <h3 align="center">Viviendas</h3>
-    <p><a href="viviendas_insertar.php">Añadir nuevo vivienda</a></p>
+    <p><a href="viviendas_insertar.php">Añadir nueva vivienda</a></p>
     <?php
 
           //CREATING THE CONNECTION

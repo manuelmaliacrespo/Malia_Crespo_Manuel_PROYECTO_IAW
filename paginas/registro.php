@@ -6,8 +6,8 @@
 
 
 
-<div align="center">
-<h1 align="center">Registro</h1>
+<div align="">
+<h4 align="">Registro</h4><br>
 <?php
 
     if (isset($_POST["registro"])) {
@@ -48,7 +48,7 @@
   <p>DNI: <input name="dni" type="text" required></p>
 
 
-  <p><input type="submit" value="Registrar" name="registro"></p>
+  <p><input type="submit" value="Registrar" class="btn btn-primary name="registro"></p>
 
 </form>
 

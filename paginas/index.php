@@ -140,21 +140,5 @@ if ($result = $connection->query("SELECT * FROM viviendas")) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Incluyendo la parte del código de la parte de abajo de la página. -->
 <?php include '../piepagina.php'; ?>

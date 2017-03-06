@@ -61,7 +61,7 @@ if ($connection->connect_errno) {
                 <div class="panel-body">
                   '.$obj->comentario.'
                 </div>
-              </div>';*/
+              </div>';*/    
 
             echo ' <blockquote>
   <p>'.$obj->comentario.' ';

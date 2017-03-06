@@ -4,8 +4,8 @@
   <?php include '../cabecera.php'; ?>
 
 
-  <div align="center">
-    <h1 align="center">Inserte sus datos</h1>
+  <div align="left">
+    <h4 align="">Inserte sus datos</h4>
     <?php
         //FORM SUBMITTED
         //Si esxiste el login por $ POST conectarse a la base de datos.
@@ -59,9 +59,9 @@
 
     <form action="login.php" method="post" autocomplete="off">
 
-      <p><input name="email" required></p>
-      <p><input name="clave" type="password" required></p>
-      <p><input type="submit" value="Identificarme" name="login"></p>
+      <p>EMAIL: <input name="email" required></p>
+      <p>CONTRASEÑA: <input name="clave" type="password" required></p>
+      <p><input type="submit" value="Identificarme" class="btn btn-primary" name="login"></p>
 
     </form>
 </div>

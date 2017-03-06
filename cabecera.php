@@ -35,7 +35,8 @@
   <body>
 
     <div class="container">
-
+      
+      <!--Logo "Trafalgar eres tu"-->
       <a href="../paginas/index.php"><img style="width:350px;" src="../images/logo.png"></img></a><br><br>
 
       <nav class="navbar navbar-default">
