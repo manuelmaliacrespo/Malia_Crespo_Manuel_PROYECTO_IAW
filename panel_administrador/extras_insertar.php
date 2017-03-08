@@ -21,7 +21,7 @@ if($_SESSION["rol"] != "admin") {
 <?php
 //SI HACE CLIC EN EL INSERTAR
     if (isset($_POST["insertar_extras"])) {
-    //Si existe el campo registro...
+    //Si existe el campo insertar_extras...
       $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
       //Conexion a la base de datos (localhost, usuario, contraseña, bd).
 
@@ -34,7 +34,7 @@ if($_SESSION["rol"] != "admin") {
       $consulta="insert into extras (actividad, precio, foto, descripcion)
       VALUES ('".$_POST["actividad"]."', '".$_POST["precio"]."', '".$_POST["foto"]."',
       '".$_POST["descripcion"]."')";
-      //Insertar en extras ( actividad , precio ).
+      //Insertar en extras ( actividad , precio, foto, descripcion ).
 
 
       if ($result = $connection->query($consulta)) {
@@ -53,12 +53,19 @@ if($_SESSION["rol"] != "admin") {
 
 
 
+<?php
 
+  /*  echo "<pre>";
+    echo var_dump($_POST);
+    echo "</pre>";*/
+
+
+?>
 
 
 <form action="extras_insertar.php" method="post">
 
-          <p>ACTIVIDAD: <input type="text" value="" name="actividad"></p>
+          <p>ACTIVIDAD: <input type="text" value="" name="actividad" required=""></p>
           <p>PRECIO: <input type="text" value="" name="precio"></p>
           <p>FOTO: <input type="text" value="" name="foto"></p>
           <p>DESCRIPCION: <textarea name="descripcion"></textarea></p>

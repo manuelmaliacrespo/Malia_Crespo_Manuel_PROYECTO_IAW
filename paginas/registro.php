@@ -1,13 +1,12 @@
-
-
-    <!-- Incluyendo la parte del código de la cabecera (principalmente menú)-->
-    <?php include '../cabecera.php'; ?>
+<!-- Incluyendo la parte del código de la cabecera (principalmente menú)-->
+<?php include '../cabecera.php'; ?>
 
 
 
 
 <div align="">
 <h4 align="">Registro</h4><br>
+
 <?php
 
     if (isset($_POST["registro"])) {
@@ -23,8 +22,9 @@
       //$_POST por que no quiero que me aparezcan los datos en la url.
       $consulta="insert into usuarios (email, clave, nombre, apellidos, dni, rol)
       values ('".$_POST["email"]."', md5('".$_POST["clave"]."'), '".$_POST["nombre"]."', '".$_POST["apellidos"]."', '".$_POST["dni"]."', 'usuario')";
+      //CAMPO USUARIO = rol / admin
 
-      echo $consulta;
+      //echo $consulta;
 
       if ($result = $connection->query($consulta)) {
 
@@ -39,7 +39,7 @@
 ?>
 
 <!--Formulario con los datos que solicito.-->
-<form action="registro.php" method="post" autocomplete="off">
+<form action="registro.php" method="post">
 
   <p>EMAIL: <input name="email" required></p>
   <p>CONTRASEÑA: <input name="clave" type="password" required></p>
@@ -48,12 +48,13 @@
   <p>DNI: <input name="dni" type="text" required></p>
 
 
-  <p><input type="submit" value="Registrar" class="btn btn-primary name="registro"></p>
+  <p><input type="submit" value="Registrar" class="btn btn-primary" name="registro"></p>
 
 </form>
 
 
 </div>
+
 
 
 

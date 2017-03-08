@@ -6,7 +6,7 @@
 if($_SESSION["rol"] != "admin") {
   header ("Location: ../paginas/index.php");
 }
-//Si el rol "NO" es admin mandame a index.php
+//Si el rol "NO" es admin redirigir a index.php
 ?>
 
 
@@ -68,30 +68,8 @@ if($_SESSION["rol"] != "admin") {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
-//VIENE DE USUARIOS.PHP RELLENAMOS EL FORMULARIO CON LOS DATOS DEL USUARIO.
+//VIENE DE VIVIENDAS.PHP RELLENAMOS EL FORMULARIO CON LOS DATOS DE LA VIVIENDA.
 if (isset($_GET["editar"])) {
 
   $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");

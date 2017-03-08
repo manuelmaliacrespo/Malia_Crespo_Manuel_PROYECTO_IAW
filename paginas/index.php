@@ -27,7 +27,7 @@ if ($connection->connect_errno) {
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
     <li data-target="#carousel-example-generic" data-slide-to="3"></li>
   </ol>
-  <!--Parte del carrusel -->
+  <!--PARTE DEL CARRUSEL -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
       <img style="height:400px; width:100%;" src="../images/carrusel/montana.jpeg" alt="...">
@@ -59,6 +59,7 @@ if ($connection->connect_errno) {
   </div>
 
   <!-- Controls -->
+  <!--HACIA DELANTE Y HACIA ATRAS DEL CARRUSEL-->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -95,19 +96,6 @@ if ($result = $connection->query("SELECT * FROM viviendas")) {
     echo '<div class="row">';
     while($obj = $result->fetch_object()) {
 
-      //echo $obj->foto1;
-      /*echo "<div style='float:left; margin:0px 30px 50px 0px;'>";
-
-        echo "<div style='border:1px gray solid; width:180px; height:200px; align:center;'>";
-        echo "Nombre: <b>".$obj->nombre."</b>";
-        echo "<br>";
-        echo "Ubicacion: <b>".$obj->localizacion."</b>";
-        echo "<br>";
-        echo "<img class='img-rounded' style='width:160px;' src='../images/viviendas/".$obj->foto1."'></img><br>";
-        echo "<a href='ver_vivienda.php?id_vivienda=$obj->id_vivienda'>Ver vivienda</a>";
-        echo "</div>";
-      echo "</div>";*/
-
       echo '
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
@@ -121,6 +109,7 @@ if ($result = $connection->query("SELECT * FROM viviendas")) {
       </div>';
 
     }
+    //Bucle de cada casa con (foto, nombre, localizacion).
 
     echo '</div>';
 

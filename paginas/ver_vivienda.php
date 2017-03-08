@@ -32,6 +32,7 @@ if ($connection->connect_errno) {
 
           if ($result->num_rows===0) {
           //Si el resultado es = 0
+          //Aparece la vivienda si o si ya que paso la id.
 
           } else {
 
@@ -53,7 +54,7 @@ if ($connection->connect_errno) {
               echo "<br><b>Temp. Baja:</b> ".$obj->precio_baja;
               echo "<br><b>Temp. Media:</b> ".$obj->precio_media;
               echo "<br><b>Temp. Alta:</b> ".$obj->precio_alta;
-              //Mostar los datos (informacion) de la vivienda seleccionada.
+              //Mostar los datos (informacion) de la vivienda seleccionada junto a las fotos.
             echo "</div>";
 
 

@@ -1,6 +1,20 @@
 <?php
   session_start();
   //Siempre se ha de empezar con session start.
+  /*echo "$ _SESSION";
+  echo "<pre>";
+  echo var_dump($_SESSION);
+  echo "</pre>";
+
+  echo "$ _POST";
+  echo "<pre>";
+  echo var_dump($_POST);
+  echo "</pre>";
+
+  echo "$ _GET";
+  echo "<pre>";
+  echo var_dump($_GET);
+  echo "</pre>";*/
 ?>
 
 
@@ -35,7 +49,7 @@
   <body>
 
     <div class="container">
-      
+
       <!--Logo "Trafalgar eres tu"-->
       <a href="../paginas/index.php"><img style="width:350px;" src="../images/logo.png"></img></a><br><br>
 
@@ -55,7 +69,7 @@
                 //Si el rol es admin, muestrame el boton Panel de Control (--).
                 if (isset($_SESSION["rol"]) && $_SESSION["rol"] == "admin") {
                   echo '<li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Panel Administración <span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Panel Administración <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="../panel_administrador/usuarios.php">Usuarios</a></li>
                       <li><a href="../panel_administrador/viviendas.php">Viviendas</a></li>

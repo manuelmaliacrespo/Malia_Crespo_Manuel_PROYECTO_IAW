@@ -1,5 +1,3 @@
-<!--SELECT usu.nombre, usu.apellidos, va.*, vi.nombre as nombre_vivienda FROM valoracion va, usuarios usu, viviendas vi WHERE va.id_vivienda=vi.id_vivienda AND va.id_usuario=usu.id_usuario-->
-<!-- Incluyendo la parte del código de la cabecera (principalmente menú)-->
 <?php include '../cabecera.php'; ?>
 
 
@@ -33,6 +31,7 @@ if ($connection->connect_errno) {
       AND va.id_vivienda='.$_GET["id_vivienda"].'
       ORDER BY va.fecha desc';
       //Consulta solicitando * vivienda para extraer el id de vivienda.
+      //Va = valoracion
 
       if ($result = $connection->query($consulta)) {
 
@@ -45,23 +44,6 @@ if ($connection->connect_errno) {
             echo '<h3 align="center">Valoraciones</h3>';
 
             while($obj = $result->fetch_object()) {
-
-
-              /*echo '<div class="panel panel-default">
-                <div class="panel-heading">
-                  <b>'.$obj->nombre.' '.$obj->apellidos.'  ';
-
-                  for ($i=0; $i < $obj->puntuacion; $i++) {
-                    echo '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
-                  }
-
-                  echo '</b>
-                  <br>'.$obj->fecha.'
-                </div>
-                <div class="panel-body">
-                  '.$obj->comentario.'
-                </div>
-              </div>';*/    
 
             echo ' <blockquote>
   <p>'.$obj->comentario.' ';
@@ -85,9 +67,7 @@ echo '
         echo "Wrong Query";
       }
 
-  } else {
-    //header("Location: index.php");
-  }
+  } 
 ?>
 
 

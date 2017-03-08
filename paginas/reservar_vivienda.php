@@ -24,17 +24,20 @@
 
       if ($result = $connection->query($consulta)) {
       //Si hay resultado...
-      //copiado de internet.
+      //Copiado de internet. Funcion para sacar los dias que hay entre dos fechas. Fecha_entrada a Fecha_salida.
       function dias_transcurridos($fecha_i,$fecha_f) {
           $dias	= (strtotime($fecha_i)-strtotime($fecha_f))/86400;
           $dias 	= abs($dias); $dias = floor($dias);
           return $dias;
       }
       $dias = dias_transcurridos($_POST["fecha_entrada"], $_POST["fecha_salida"]);
+      //Fecha entrada y fecha salida.
+
 
 
       $dinero_reserva = $_POST["dinero_reserva"];
       $dinero_porcentaje = $dinero_reserva*0.3;
+      //Calcular el 30% de los dias que se haya elegido.
       $resultado = $dinero_porcentaje*$dias;
       echo "Se ha hecho la reserva correctamente. Aquí metemos los datos bancarios para hacer el ingreso.";
       echo "<br>Haz el ingreso en ES00 0000 0000 00 0000000000 de la señal: ".$resultado." Euros.";

@@ -31,7 +31,12 @@ if (!isset($_SESSION["email"])) {
         //Validacion de la base de datos, en caso de error que lo muestre.
 
 
-        $consulta="update usuarios set email='".$_POST["email"]."', nombre='".$_POST["nombre"]."',  apellidos='".$_POST["apellidos"]."', dni='".$_POST["dni"]."' where id_usuario='".$_POST["id_usuario"]."'";
+        $consulta="update usuarios set email='".$_POST["email"]."',
+        nombre='".$_POST["nombre"]."',
+        apellidos='".$_POST["apellidos"]."',
+        dni='".$_POST["dni"]."'
+        where
+        id_usuario='".$_POST["id_usuario"]."'";
         //Actualizar campos del usuario.
 
 
@@ -71,6 +76,7 @@ if (!isset($_SESSION["email"])) {
     <p><input type="submit" value="Editar mis datos" class="btn btn-primary" name="editar_usuario"></p>
 
   </form>
+  <!--Formulario para modificar el perfil -->
 
 
 
@@ -91,7 +97,7 @@ if (!isset($_SESSION["email"])) {
 <h4>Mis reservas</h4>
 
 <?php
-//SI HACE CLIC EN EL EDITAR
+
 
       $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
       //Conexion a la base de datos (localhost, usuario, contraseña, bd).
@@ -103,14 +109,15 @@ if (!isset($_SESSION["email"])) {
       //Validacion de la base de datos, en caso de error que lo muestre.
 
 
-      $consulta="select viviendas.nombre, reservas.* from viviendas, reservas where reservas.id_vivienda=viviendas.id_vivienda and id_usuario='".$_SESSION["id_usuario"]."'";
+      $consulta="select viviendas.nombre, reservas.* from viviendas, reservas
+      where reservas.id_vivienda=viviendas.id_vivienda and id_usuario='".$_SESSION["id_usuario"]."'";
 
 
 
       if ($result = $connection->query($consulta)) {
 
 
-              if ($result->num_rows===0) {
+              if ($result->num_rows===0) {    
               //Si el resultado es = 0 que me muestre que no hay usuarios.
                 echo "Sin reservas";
               } else {
@@ -160,13 +167,6 @@ if (!isset($_SESSION["email"])) {
 
 
 ?>
-
-
-
-
-
-
-
 
 
 

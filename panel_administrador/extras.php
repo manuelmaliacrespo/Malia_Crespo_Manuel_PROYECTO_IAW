@@ -18,7 +18,7 @@ if($_SESSION["rol"] != "admin") {
   <div align="">
     <h3 align="center">Extras</h3>
     <p><a href="extras_insertar.php">Añadir nuevo extra</a></p>
-    <!-- Boton debajo de extras -->
+    <!-- Boton debajo de extras para poder añadir un nuevo extra-->
 
 
     <?php
@@ -43,6 +43,12 @@ if($_SESSION["rol"] != "admin") {
                 echo "Sin extras";
               } else {
 
+                /*$obj = $result->fetch_object();
+
+                echo "<pre>";
+                var_dump($obj);
+                echo "</pre>";*/
+
                 //Si existe, mostrar usuarios en una tabla.
 
                 echo "<table class='table table-bordered'>";
@@ -56,6 +62,7 @@ if($_SESSION["rol"] != "admin") {
 
                 while($obj = $result->fetch_object()) {
 
+
                   echo "<tr>";
                     echo "<td>".$obj->id_extras."</td>";
                     echo "<td>".$obj->actividad."</td>";
@@ -68,10 +75,11 @@ if($_SESSION["rol"] != "admin") {
                   echo "</tr>";
 
 
-                };
+              };
 
 
               echo "</table>";
+
 
 
               }
