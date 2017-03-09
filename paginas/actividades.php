@@ -29,7 +29,7 @@
           if ($result = $connection->query($consulta)) {
 
               if ($result->num_rows===0) {
-              //Si el resultado es = 0 que me muestre que no hay usuarios.
+              //Si el resultado es = 0 que me muestre que no hay usuarios (===) que ademas sea del mismo tipo.
                 echo "Sin extras";
               } else {
                 //TABLA HTML
@@ -51,6 +51,7 @@
                   echo "</tr>";
                   echo "</table><br><br>";
                   echo "<br><br>";
+                  //Foto - actividad - precio- descripcion.
 
 
 
@@ -67,12 +68,6 @@
 
 
     ?>
-
-
-
-
-
-
 
 
 

@@ -3,10 +3,6 @@
 
 
 
-
-
-
-
 <?php
 
 $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
@@ -67,7 +63,7 @@ echo '
         echo "Wrong Query";
       }
 
-  } 
+  }
 ?>
 
 

@@ -23,10 +23,11 @@
 
           $consulta="select * from usuarios where
           email='".$_POST["email"]."' and clave=md5('".$_POST["clave"]."');";
+          //Email y clave, datos que pso para el Login.
 
 
           if ($result = $connection->query($consulta)) {
-              //No rows returned
+              
               if ($result->num_rows===0) {
               //Si el resultado de la consulta = 0 mostrarme "LOGIN INVALIDO".
                 echo "LOGIN INVALIDO";

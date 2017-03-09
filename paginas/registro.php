@@ -19,16 +19,16 @@
           exit();
       }
       //Validacion de la base de datos, en caso de error que lo muestre.
-      //$_POST por que no quiero que me aparezcan los datos en la url.
+
       $consulta="insert into usuarios (email, clave, nombre, apellidos, dni, rol)
       values ('".$_POST["email"]."', md5('".$_POST["clave"]."'), '".$_POST["nombre"]."', '".$_POST["apellidos"]."', '".$_POST["dni"]."', 'usuario')";
-      //CAMPO USUARIO = rol / admin
+      //USUARIO (rol / admin).
 
       //echo $consulta;
 
       if ($result = $connection->query($consulta)) {
 
-            //Si el resltado es positivo, que me redirija a "index.php"
+            //Resultado OK, que me redirección a "index.php"
             header ("Location: index.php");
 
       } else {

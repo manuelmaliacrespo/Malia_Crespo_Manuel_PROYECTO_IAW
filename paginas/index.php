@@ -11,14 +11,12 @@ if ($connection->connect_errno) {
   printf("Connection failed: %s\n", $connection->connect_error);
   exit();
 }
+//Validacion de la conexion a la base de datos.
 ?>
 
 
 
-
-
-
-<!-- Contenido de la pagina index -->
+<!-- CONTENIDO INDEX -->
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -73,12 +71,6 @@ if ($connection->connect_errno) {
 
 
 
-
-
-
-
-
-
 <br><br>
 
 
@@ -110,6 +102,8 @@ if ($result = $connection->query("SELECT * FROM viviendas")) {
 
     }
     //Bucle de cada casa con (foto, nombre, localizacion).
+    //Ver_vivienda.
+    //Ver comentarios.
 
     echo '</div>';
 
@@ -122,10 +116,6 @@ if ($result = $connection->query("SELECT * FROM viviendas")) {
 
 
 ?>
-
-
-
-
 
 
 

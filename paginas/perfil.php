@@ -37,7 +37,7 @@ if (!isset($_SESSION["email"])) {
         dni='".$_POST["dni"]."'
         where
         id_usuario='".$_POST["id_usuario"]."'";
-        //Actualizar campos del usuario.
+        //ACTUALIZAR campos del usuario.
 
 
         if ($result = $connection->query($consulta)) {
@@ -49,7 +49,7 @@ if (!isset($_SESSION["email"])) {
               $_SESSION['dni'] = $_POST["dni"];
 
               //Redirigir a perfil.php
-              //header ("Location: perfil.php");
+
 
         } else {
           echo "Algunos datos están incorrectos o el email ya existe en nuestra base de datos.";
@@ -111,13 +111,14 @@ if (!isset($_SESSION["email"])) {
 
       $consulta="select viviendas.nombre, reservas.* from viviendas, reservas
       where reservas.id_vivienda=viviendas.id_vivienda and id_usuario='".$_SESSION["id_usuario"]."'";
+      //Saco el id_usuario y el id_vivienda de la vivienda que el usuario ha seleccionado.
 
 
 
       if ($result = $connection->query($consulta)) {
 
 
-              if ($result->num_rows===0) {    
+              if ($result->num_rows===0) {
               //Si el resultado es = 0 que me muestre que no hay usuarios.
                 echo "Sin reservas";
               } else {

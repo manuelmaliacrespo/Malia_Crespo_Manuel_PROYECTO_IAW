@@ -31,7 +31,8 @@ if($_SESSION["rol"] != "admin") {
       }
       //Validacion de la base de datos, en caso de error que lo muestre.
 
-      $consulta="insert into viviendas (nombre, localizacion, dormitorios, personas, mascotas, precio_baja, precio_media, precio_alta, foto1, foto2, foto3, foto4, foto5, descripcion)
+      $consulta="insert into viviendas
+      (nombre, localizacion, dormitorios, personas, mascotas, precio_baja, precio_media, precio_alta, foto1, foto2, foto3, foto4, foto5, descripcion)
       VALUES ('".$_POST["nombre"]."',
       '".$_POST["localizacion"]."',
       '".$_POST["dormitorios"]."',
@@ -61,19 +62,6 @@ if($_SESSION["rol"] != "admin") {
 
   }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

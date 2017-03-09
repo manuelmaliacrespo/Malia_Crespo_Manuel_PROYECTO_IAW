@@ -30,8 +30,9 @@
           $dias 	= abs($dias); $dias = floor($dias);
           return $dias;
       }
+      //86400 = para sacar los dias.
       $dias = dias_transcurridos($_POST["fecha_entrada"], $_POST["fecha_salida"]);
-      //Fecha entrada y fecha salida.
+      //Fecha entrada y fecha salida ( saber dias transcurridos entre una fecha y otra ).
 
 
 
