@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-03-2017 a las 10:02:23
+-- Tiempo de generación: 09-03-2017 a las 23:16:43
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.6.24
 
@@ -107,7 +107,6 @@ INSERT INTO `usuarios` (`id_usuario`, `dni`, `email`, `rol`, `clave`, `nombre`, 
 (8, '56456456e', 'antonio@gmail.com', 'usuario', 'e10adc3949ba59abbe56e057f20f883e', 'antonio', 'gomez'),
 (10, '44445555R', 'bea@gmail.com', 'usuario', 'e10adc3949ba59abbe56e057f20f883e', 'beatriz', 'garcia'),
 (11, '21212121R', 'carmen@gmail.com', 'usuario', 'e10adc3949ba59abbe56e057f20f883e', 'carmen', 'crespo'),
-(13, '23232323R', 'jj@gmail.com', 'usuario', 'e10adc3949ba59abbe56e057f20f883e', 'jesuss', 'zamora'),
 (14, '11111123L', 'suzamora@gmail.com', 'usuario', 'e10adc3949ba59abbe56e057f20f883e', 'Jesus', 'Zamora'),
 (15, '12131415R', 'rebollo@gmail.com', 'usuario', 'e10adc3949ba59abbe56e057f20f883e', 'miguel', 'rebollo');
 
@@ -228,7 +227,7 @@ ALTER TABLE `reservas`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT de la tabla `valoracion`
 --

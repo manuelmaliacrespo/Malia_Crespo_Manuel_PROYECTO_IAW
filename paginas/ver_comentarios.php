@@ -40,19 +40,23 @@ if ($connection->connect_errno) {
             echo '<h3 align="center">Valoraciones</h3>';
 
             while($obj = $result->fetch_object()) {
+              
 
-            echo ' <blockquote>
-  <p>'.$obj->comentario.' ';
-  for ($i=0; $i < $obj->puntuacion; $i++) {
-    echo '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
-  }
-echo '
-  </p>
-  <footer>'.$obj->nombre.' '.$obj->apellidos.', <cite title="Source Title">'.$obj->fecha.'
+                    echo ' <blockquote>
+                      <p>'.$obj->comentario.' ';
+
+                      for ($i=0; $i < $obj->puntuacion; $i++) {
+                        echo '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
+                      }
+                      //Estrellas.
+
+                    echo '
+                      </p>
+                      <footer>'.$obj->nombre.' '.$obj->apellidos.', <cite title="Source Title">'.$obj->fecha.'
 
 
-  </cite></footer>
-</blockquote>';
+                      </cite></footer>
+                    </blockquote>';
 
 
             }
@@ -67,11 +71,7 @@ echo '
 ?>
 
 
-
-
-
 <br>
-
 
 
 
@@ -96,6 +96,7 @@ echo '
       if ($result = $connection->query($consulta)) {
 
         header("Location: ver_comentarios.php?id_vivienda=".$_POST["id_vivienda"]."");
+        //Redirigir a Ver_comentarios.php pasando el id_vivienda.
 
       } else {
         echo "Wrong Query";
@@ -107,7 +108,7 @@ echo '
 
 <!-- FORMULARIO DE COMENTAR -->
 <?php
-/* Si está logado mostrar el formulario, sino nada.*/
+/* SI ESTA LOGADO MOSTRAR EL FORMULARIO SI NO NADA.*/
 if (isset($_SESSION["email"])) {
 echo '<form method="post" action="ver_comentarios.php">
       <input type="hidden" name="id_vivienda" value="'.$_GET["id_vivienda"].'"></input>

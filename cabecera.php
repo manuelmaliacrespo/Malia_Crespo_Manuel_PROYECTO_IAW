@@ -31,16 +31,9 @@
 
     <title>Escápate al Sur</title>
 
-
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-
     <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-
     <link href="../css/navbar.css" rel="stylesheet">
-
-
     <script src="../js/ie-emulation-modes-warning.js"></script>
 
 

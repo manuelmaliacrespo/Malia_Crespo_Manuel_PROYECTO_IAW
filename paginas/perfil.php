@@ -157,7 +157,8 @@ if (!isset($_SESSION["email"])) {
 
               echo "</table>";
 
-
+              echo '<p>Haz el ingreso en BBVA: <b>ES00 0000 0000 00 0000000000</b>, de la señal <b>(30%)</b> y especificar en concepto el Email</p>
+              <p>Cualquier duda, póngase en contacto con el Administrador <b>Manuel Malia Crespo</b> al 606 96 49 28 </p>';
 
             }
 

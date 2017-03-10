@@ -41,7 +41,7 @@
                   echo "<table>";
                   echo "<tr>";
                     echo "<td>";
-                      echo "<img style='margin-right:20px;' src='../images/".$obj->foto."'> </img> ";
+                      echo "<img class='img-rounded' style='margin-right:20px;' src='../images/".$obj->foto."'> </img> ";
                     echo "</td>";
                     echo "<td>";
                         echo "<p><b>Actividad:</b> ".$obj->actividad."</p>";

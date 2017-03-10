@@ -1,5 +1,8 @@
-
-
+<br>
+  <footer class="footer">
+    <hr>
+        <p>© 2017 Proyecto <span style="color:#366ab4;"><b>Manuel Malia Crespo</b></span>. Implantación de aplicaciones web - I.E.S Triana</p>
+  </footer>
 
 
 

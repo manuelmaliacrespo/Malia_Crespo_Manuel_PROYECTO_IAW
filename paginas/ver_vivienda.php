@@ -4,10 +4,6 @@
 
 
 
-
-
-
-
 <?php
 
 $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
@@ -43,11 +39,11 @@ if ($connection->connect_errno) {
 
             echo "<div>";
               echo "<align='center'>";
-              echo "<img class='img-rounded' style='width:300px;' src='../images/viviendas/".$obj->foto1."'></img><br><br>";
-              echo "<img class='img-rounded' style='width:100px;' src='../images/viviendas/".$obj->foto2."'></img>";
-              echo "<img class='img-rounded' style='width:100px;' src='../images/viviendas/".$obj->foto3."'></img>";
-              echo "<img class='img-rounded' style='width:100px;' src='../images/viviendas/".$obj->foto4."'></img>";
-              echo "<img class='img-rounded' style='width:100px;' src='../images/viviendas/".$obj->foto5."'></img><br>";
+              echo "<img class='img-thumbnail' style='width:400px;' src='../images/viviendas/".$obj->foto1."'></img><br><br>";
+              echo " <img class='img-thumbnail' style='width:200px;' src='../images/viviendas/".$obj->foto2."'></img>";
+              echo " <img class='img-thumbnail' style='width:200px;' src='../images/viviendas/".$obj->foto3."'></img>";
+              echo " <img class='img-thumbnail' style='width:200px;' src='../images/viviendas/".$obj->foto4."'></img>";
+              echo " <img class='img-thumbnail' style='width:200px;' src='../images/viviendas/".$obj->foto5."'></img><br>";
               echo "<br><b>Nombre:</b> ".$obj->nombre;
               echo "<br><b>Ubicación:</b> ".$obj->localizacion;
               echo "<br><b>Descripcion:</b> ".$obj->descripcion;
@@ -109,16 +105,7 @@ if ($connection->connect_errno) {
 
 
 
-
-
 <br>
-
-
-
-
-
-
-
 
 
 

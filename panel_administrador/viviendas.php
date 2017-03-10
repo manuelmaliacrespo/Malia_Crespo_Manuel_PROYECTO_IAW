@@ -72,6 +72,9 @@
                 };
 
 
+                echo "</table>";
+
+
               }
           } else {
             echo "Wrong Query";
