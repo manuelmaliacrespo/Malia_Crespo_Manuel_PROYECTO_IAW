@@ -22,7 +22,7 @@ if($_SESSION["rol"] != "admin") {
 //SI HACE CLIC EN EL INSERTAR
     if (isset($_POST["insertar_extras"])) {
     //Si existe el campo insertar_extras...
-      $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
+      $connection = new mysqli("localhost", "id1022619_mmalia", "123456", "id1022619_proyecto");
       //Conexion a la base de datos (localhost, usuario, contraseña, bd).
 
       if ($connection->connect_errno) {

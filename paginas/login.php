@@ -12,7 +12,7 @@
         //Si esxiste el login por $ POST conectarse a la base de datos.
         if (isset($_POST["login"])) {
           //CREATING THE CONNECTION
-          $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
+          $connection = new mysqli("localhost", "id1022619_mmalia", "123456", "id1022619_proyecto");
           //Conexion a la base de datos (localhost, usuario, contraseña, bd).
 
           if ($connection->connect_errno) {
@@ -27,7 +27,7 @@
 
 
           if ($result = $connection->query($consulta)) {
-              
+
               if ($result->num_rows===0) {
               //Si el resultado de la consulta = 0 mostrarme "LOGIN INVALIDO".
                 echo "LOGIN INVALIDO";

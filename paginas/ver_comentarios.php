@@ -5,7 +5,7 @@
 
 <?php
 
-$connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
+$connection = new mysqli("localhost", "id1022619_mmalia", "123456", "id1022619_proyecto");
 //Conexion a la base de datos.
 
 if ($connection->connect_errno) {
@@ -40,7 +40,7 @@ if ($connection->connect_errno) {
             echo '<h3 align="center">Valoraciones</h3>';
 
             while($obj = $result->fetch_object()) {
-              
+
 
                     echo ' <blockquote>
                       <p>'.$obj->comentario.' ';
@@ -80,7 +80,7 @@ if ($connection->connect_errno) {
     if (isset($_POST["comentar_vivienda"])) {
     //Si existe petición $_POST reservar_vivienda
 
-      $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
+      $connection = new mysqli("localhost", "id1022619_mmalia", "123456", "id1022619_proyecto");
       //Conexion base de datos
 
       if ($connection->connect_errno) {

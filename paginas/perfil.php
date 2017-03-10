@@ -21,7 +21,7 @@ if (!isset($_SESSION["email"])) {
   //SI HACE CLIC EN EL EDITAR
       if (isset($_POST["editar_usuario"])) {
       //Si existe el campo editar...
-        $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
+        $connection = new mysqli("localhost", "id1022619_mmalia", "123456", "id1022619_proyecto");
         //Conexion a la base de datos (localhost, usuario, contraseña, bd).
 
         if ($connection->connect_errno) {
@@ -99,7 +99,7 @@ if (!isset($_SESSION["email"])) {
 <?php
 
 
-      $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
+      $connection = new mysqli("localhost", "id1022619_mmalia", "123456", "id1022619_proyecto");
       //Conexion a la base de datos (localhost, usuario, contraseña, bd).
 
       if ($connection->connect_errno) {

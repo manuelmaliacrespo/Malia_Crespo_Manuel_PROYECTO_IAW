@@ -9,7 +9,7 @@
     if (isset($_POST["reservar_vivienda"])) {
     //Si existe petición $_POST reservar_vivienda
 
-      $connection = new mysqli("localhost", "mmalia", "123456", "proyecto");
+      $connection = new mysqli("localhost", "id1022619_mmalia", "123456", "id1022619_proyecto");
       //Conexion base de datos
 
       if ($connection->connect_errno) {
