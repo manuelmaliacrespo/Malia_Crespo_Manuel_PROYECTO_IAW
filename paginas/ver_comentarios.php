@@ -18,7 +18,7 @@ if ($connection->connect_errno) {
 
 
     if (isset($_GET["id_vivienda"])) {
-    //Si existe peticion $_GET "id_vivienda"...
+    //Si existe peticion $_GET "id_vivienda" -> index.php
 
       $consulta='SELECT usu.nombre, usu.apellidos, va.*, vi.nombre as nombre_vivienda
       FROM valoracion va, usuarios usu, viviendas vi
@@ -27,12 +27,13 @@ if ($connection->connect_errno) {
       AND va.id_vivienda='.$_GET["id_vivienda"].'
       ORDER BY va.fecha desc';
       //Consulta solicitando * vivienda para extraer el id de vivienda.
+      //Multitabla (usuario - vivienda - valoracion)
       //Va = valoracion
 
       if ($result = $connection->query($consulta)) {
 
           if ($result->num_rows===0) {
-          //Si el resultado es = 0
+          //Si el resultado es = 0, sin comentarios.
           echo "No hay comentarios.<br>";
           } else {
 
@@ -48,7 +49,7 @@ if ($connection->connect_errno) {
                       for ($i=0; $i < $obj->puntuacion; $i++) {
                         echo '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
                       }
-                      //Estrellas.
+                      //Estrellas, rango (min - max).
 
                     echo '
                       </p>
@@ -78,7 +79,7 @@ if ($connection->connect_errno) {
 <?php
 
     if (isset($_POST["comentar_vivienda"])) {
-    //Si existe petición $_POST reservar_vivienda
+    //Si existe petición $_POST comentar_vivienda (name = formulario)
 
       $connection = new mysqli("localhost", "id1022619_mmalia", "123456", "id1022619_proyecto");
       //Conexion base de datos
@@ -91,7 +92,7 @@ if ($connection->connect_errno) {
 
       $consulta="INSERT INTO valoracion (puntuacion, comentario, fecha, id_vivienda, id_usuario)
       VALUES ('".$_POST["puntuacion"]."','".$_POST["comentario"]."', now(),'".$_POST["id_vivienda"]."','".$_SESSION["id_usuario"]."')";
-      //Consulta para insertar "reserva" con campos de reserva.
+      //Consulta para insertar "comentario".
 
       if ($result = $connection->query($consulta)) {
 
@@ -108,7 +109,7 @@ if ($connection->connect_errno) {
 
 <!-- FORMULARIO DE COMENTAR -->
 <?php
-/* SI ESTA LOGADO MOSTRAR EL FORMULARIO SI NO NADA.*/
+/* SI ESTA (LOGADO) MOSTRAR EL FORMULARIO SI NO NADA.*/
 if (isset($_SESSION["email"])) {
 echo '<form method="post" action="ver_comentarios.php">
       <input type="hidden" name="id_vivienda" value="'.$_GET["id_vivienda"].'"></input>

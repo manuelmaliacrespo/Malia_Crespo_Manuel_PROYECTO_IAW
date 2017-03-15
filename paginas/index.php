@@ -79,7 +79,7 @@ if ($connection->connect_errno) {
 <?php
 if ($result = $connection->query("SELECT * FROM viviendas")) {
 
-  //Si la consulta devuelve 0 rows, mostrar "Sin viviendas"
+  //Si la consulta devuelve 0 filas, mostrar "Sin viviendas".
   if ($result->num_rows===0) {
       echo "Sin viviendas";
 
@@ -87,7 +87,7 @@ if ($result = $connection->query("SELECT * FROM viviendas")) {
     //Mostramos contenido.
     echo '<div class="row">';
     while($obj = $result->fetch_object()) {
-
+    //Recorrer los objetos.
       echo '
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
@@ -102,8 +102,8 @@ if ($result = $connection->query("SELECT * FROM viviendas")) {
 
     }
     //Bucle de cada casa con (foto, nombre, localizacion).
-    //Ver_vivienda.
-    //Ver comentarios.
+    //Ver_vivienda $_GET
+    //Ver comentarios $_GET
 
     echo '</div>';
 

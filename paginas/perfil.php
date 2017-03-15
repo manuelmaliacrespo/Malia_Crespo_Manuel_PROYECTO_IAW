@@ -12,6 +12,7 @@ if (!isset($_SESSION["email"])) {
 
 
   <h3 align="center">Mi Perfil</h3>
+  <!--Titulo-->
 
 
 
@@ -20,7 +21,7 @@ if (!isset($_SESSION["email"])) {
   <?php
   //SI HACE CLIC EN EL EDITAR
       if (isset($_POST["editar_usuario"])) {
-      //Si existe el campo editar...
+      //Si existe el campo editar (name= formulario)
         $connection = new mysqli("localhost", "id1022619_mmalia", "123456", "id1022619_proyecto");
         //Conexion a la base de datos (localhost, usuario, contraseña, bd).
 
@@ -42,7 +43,7 @@ if (!isset($_SESSION["email"])) {
 
         if ($result = $connection->query($consulta)) {
 
-              //Volvemos a rellenar la variable session con los nuevos datos, si es que los hubiera.
+              //Actualizar la variable SESSION con los nuevos datos, si es que los hubiera.
               $_SESSION['email'] = $_POST["email"];
               $_SESSION['nombre'] = $_POST["nombre"];
               $_SESSION['apellidos'] = $_POST["apellidos"];

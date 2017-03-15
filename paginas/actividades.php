@@ -29,11 +29,10 @@
           if ($result = $connection->query($consulta)) {
 
               if ($result->num_rows===0) {
-              //Si el resultado es = 0 que me muestre que no hay usuarios (===) que ademas sea del mismo tipo.
+              //Si el resultado es = 0 que me muestre que no hay actividades.
                 echo "Sin extras";
               } else {
-                //TABLA HTML
-                //Si existen que me muestre los usuarios en una tabla.
+                //Pintame la tabla.
 
 
 

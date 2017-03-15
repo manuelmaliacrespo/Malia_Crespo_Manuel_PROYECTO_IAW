@@ -6,11 +6,12 @@
 
 <div align="">
 <h4 align="">Registro</h4><br>
+<!--Titulo-->
 
 <?php
 
     if (isset($_POST["registro"])) {
-    //Si existe el campo registro...
+    //Si existe el campo registro (name= formulario).
       $connection = new mysqli("localhost", "id1022619_mmalia", "123456", "id1022619_proyecto");
       //Conexion a la base de datos (localhost, usuario, contraseña, bd).
 
@@ -22,7 +23,7 @@
 
       $consulta="insert into usuarios (email, clave, nombre, apellidos, dni, rol)
       values ('".$_POST["email"]."', md5('".$_POST["clave"]."'), '".$_POST["nombre"]."', '".$_POST["apellidos"]."', '".$_POST["dni"]."', 'usuario')";
-      //USUARIO (rol / admin).
+      //USUARIO (rol o admin).
 
       //echo $consulta;
 
@@ -33,6 +34,7 @@
 
       } else {
         echo "Wrong Query";
+        //Error consulta.
       }
 
   }

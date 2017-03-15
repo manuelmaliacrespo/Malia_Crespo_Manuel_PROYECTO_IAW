@@ -19,22 +19,22 @@ if ($connection->connect_errno) {
 
 
     if (isset($_GET["id_vivienda"])) {
-    //Si existe peticion $_GET "id_vivienda"...
+    //Si existe peticion $_GET "id_vivienda" -> index.php
 
       $consulta="select * from viviendas where id_vivienda = ".$_GET["id_vivienda"];
-      //Consulta solicitando * vivienda para extraer el id de vivienda.
+      //Consulta solicitando * vivienda segun su id_vivienda.
 
       if ($result = $connection->query($consulta)) {
 
           if ($result->num_rows===0) {
           //Si el resultado es = 0
-          //Aparece la vivienda si o si ya que paso la id.
+          //Aparece la vivienda si o si ya que le paso la id.
 
           } else {
 
             //Muestrame la vivienda
             echo "<h4>Información</h4>";
-            //Recuperamos el resultado de la consulta.
+            //Recupero el resultado de la consulta.
             $obj = $result->fetch_object();
 
             echo "<div>";
@@ -58,7 +58,7 @@ if ($connection->connect_errno) {
 
             //Recuperamos el mes actual.
             $mes_actual = date("n");
-            //Creo $mes_actual "n" muestra el mes.
+            //Creo $mes_actual "n" muestra el mes (1-12)
 
             //Si el mes actual es desde Julio a Septiembre: Guardar en variable el precio de alta.
             if($mes_actual >= 7 && $mes_actual <= 9) {
@@ -78,8 +78,10 @@ if ($connection->connect_errno) {
             //Formulario para reservar la vivienda.
             echo '<h4>Hacer Reserva</h4>';
             echo '<form action="reservar_vivienda.php" method="post">';
+            //La accion se realiza en reservar_vivienda.php
 
               echo '<input type="hidden" name="id_vivienda" value="'.$obj->id_vivienda.'">';
+              //No quiero que se muestre el id_vivienda.
               echo '<p>Fecha Entrada: <input type="date" name="fecha_entrada" required></p>';
               echo '<p>Fecha Salida: <input type="date" name="fecha_salida" required></p>';
               echo '<p>Precio/día: <input type="text" value="'.$precio_cobrar.'" name="dinero_reserva" readonly></p>';

@@ -9,7 +9,7 @@
     <?php
 
         //FORM SUBMITTED
-        //Si esxiste el login por $ POST conectarse a la base de datos.
+        //Si esxiste el login (name= formulario) por $ POST conectarse a la base de datos.
         if (isset($_POST["login"])) {
           //CREATING THE CONNECTION
           $connection = new mysqli("localhost", "id1022619_mmalia", "123456", "id1022619_proyecto");
@@ -23,7 +23,7 @@
 
           $consulta="select * from usuarios where
           email='".$_POST["email"]."' and clave=md5('".$_POST["clave"]."');";
-          //Email y clave, datos que pso para el Login.
+          //Email y clave encriptada, datos que paso para el Login.
 
 
           if ($result = $connection->query($consulta)) {
